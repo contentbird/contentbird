@@ -1,0 +1,23 @@
+<p><%= t 'user_mailer.greetings' %></p>
+<p><%= "#{@publisher.nest_name} (#{@publisher.email})" %> <%= t '.share' %> <%= link_to 'ContentBird', root_url(pk_campaign: 'email_publication') %> :</p>
+<table cellpadding="5" cellspacing="0" border="0">
+    <tr>
+        <% if @content.first_image_property_url.present? %>
+            <td>
+                <%= link_to image_tag('http:' + @content.first_image_property_url, width: '120', style: 'margin: 0; border: 0; padding: 0; display: block;' ), @publication.permalink(@channel) %>
+            </td>
+        <% end %>
+        <td>
+            <%= link_to @content.title, @publication.permalink(@channel) %>
+            <br />
+            <% first_text = @content.first_textual_property.try(:[], 'value') %>
+            <%= truncate(first_text, length: 100, separator: ' ') if first_text.present? %>
+        </td>
+    </tr>
+</table>
+<p>
+    <%= t '.unsubscribe' %> <%= link_to t('.click_here'), new_channel_unsubscription_url(channel_id: @channel.id) %>
+</p>
+<p>
+    <%= t '.who_we_are' %> <%= link_to t('.discover'), root_url(pk_campaign: 'email_publication') %>
+</p>

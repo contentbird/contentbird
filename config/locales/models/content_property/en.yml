@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      cb/core/content_property: 'property'
+    attributes:
+      cb/core/content_property:
+        name: Url namr
+        content_type_id: Format
+        created_at: Created at
+        updated_at: Updated at 
+        title: Name

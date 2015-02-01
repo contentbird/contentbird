@@ -1,0 +1,62 @@
+fr:
+  channels: &chan_notice
+    create:
+      notice: 'Votre canal a été enregistré !'
+    update:
+      notice: "Votre canal %{channel_name} a été mis à jour"
+    reset_access_token:
+      notice: "Clé d'API regénérée"
+      error: "Désolé, nous n'avons pas pu renouveler votre clé d'API"
+    destroy:
+      notice: 'Votre canal a été supprimé'
+      error: "Désolé, nous n'avons pas pu supprimer votre canal"
+    open:
+      notice: 'Votre canal est ouvert'
+      error: "Désolé, nous n'avons pas pu ouvrir votre canal"
+    close:
+      notice: 'Votre canal est fermé'
+      error: "Désolé, nous n'avons pas pu fermer votre canal"
+  social_channels:
+    <<: *chan_notice
+  api_channels:
+    <<: *chan_notice
+  messaging_channels:
+    <<: *chan_notice
+  content_types:
+    create:
+      notice: 'Votre format est créé !'
+    update:
+      notice: 'Votre format a été enregistré et tous les contenus de ce format seront mis à jour sous peu'
+    destroy:
+      notice: 'Your format was deleted'
+      error: "Désolé, nous n'avons pas pu supprimer votre format"
+  contents:
+    new:
+      error: "Désolé, nous n'avons pas pu créer votre contenu"
+    create:
+      notice: "Votre %{title} est enregistré !"
+    update:
+      notice: "Votre %{title} est mis à jour !"
+    destroy:
+      notice: "Votre %{type} %{content} a été supprimé"
+      error: "Désolé, nous n'avons pas pu supprimer votre %{type} %{content}"
+  leads:
+    create:
+      notice: 'Merci, nous vous envoyons une ivitation dès que possible'
+      error: "Désolé, nous n'avons pas pu enregistrer votre email, vous êtes vous déjà inscrit ?"
+  publications:
+    create:
+      notice: "Ce canal n'a pas de section pour ce format, donc nous en avons créé un pour vous. Cliquez <a href=\"%{url}#bottom\">ici</a> pour paramétrer cette nouvelle section"
+      error: "Désolé, nous n'avons pas pu publier votre contenu"
+    destroy:
+      notice: "Désolé, nous n'avons pas pu dé-publier votre contenu"
+      manual_unpublication_needed: "Votre contenu est à présent inaccessible. Cependant LinkedIn ne nous permet pas de supprimer le post correspondant. Connectez-vous sur LinkedIn pour l'effacer manuellement."
+  registrations:
+    alert: "Vous devez avoir une invitation pour vous inscrire. Demandez-en une d'abord"
+  invitations:
+    create:
+      notice: 'Votre invitation a été envoyée'
+  contacts:
+    create:
+      error: 'Une erreur est survenue à la création du contact'
+      your_own_email: 'Inutile de vous ajouter à la liste : Vous recevrez une copie de chaque email'

@@ -1,0 +1,114 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+    cb.smoothAnchors($('#headerTop').height());
+<% end %>
+
+<div class="header-img" id="homeImage">
+    <div class="header-content">
+        <div class="box transparent">
+            <div class="box-hd">
+                <h1>
+                    <%= raw t('.tagline') %>
+                </h1>
+            </div>
+            <div class="box-bd cTxt">
+                <% unless user_signed_in? %>
+                    <%= link_to t('.subscription'), new_user_registration_path, class: 'butn action push signUp' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="how-it-works">
+    <a href="#how-it-works"><%= t '.hiw.link' %> <div data-icon="&#xe612;">&nbsp;</div></a>
+</div>
+<section class="narrow hiw" name="how-it-works" id="how-it-works">
+    <header>
+        <h2 class="cTxt"><%= t '.hiw.title'%></h2>
+    </header>
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-bd">
+                    <% (1..3).each do |i| %>
+                        <div id="animStep<%=i%>" class="_animStep anim-step anim-step<%=i%>">
+                            <h3><%= t ".hiw.step#{i}.title" %></h3>
+                            <p>
+                                <%= raw t(".hiw.step#{i}.body") %>
+                            </p>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="nomob">
+                <div class="box">
+                    <div class="box-bd cTxt">
+                        <div id="myobj" class="svg-container">
+                            <%= render 'how_it_works' %>
+                        </div>
+                    </div>
+                    <div class="cTxt">
+                        <a href="#" id="replay-how-it-works" data-icon="&#xe615;"><%= t '.hiw.replay' %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="highlight narrow" style="padding: 3rem ">
+        <h1 class="cTxt ">
+            <%= t '.highlight.title' %>
+        </h1>
+        <% unless user_signed_in? %>
+            <div class="cTxt">
+                <%= link_to t('.highlight.link'), new_user_registration_path, class: 'butn action background' %>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="features narrow">
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe617;"></div>
+                    <h2 class="cTxt"><%= t '.assets.asset1.title' %></h2>
+                </div>
+                <div class="box-bd cTxt">
+                    <p>
+                        <%= t '.assets.asset1.body' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe00f;"></div>
+                    <h2 class="cTxt"><%= t '.assets.asset2.title' %></h2>
+                </div>
+                <div class="box-bd cTxt">
+                    <p>
+                        <%= t '.assets.asset2.body' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe010;"></div>
+                    <h2 class="cTxt"><%= t '.assets.asset3.title' %></h2>
+                </div>
+                <div class="box-bd cTxt">
+                    <p>
+                        <%= t '.assets.asset3.body' %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

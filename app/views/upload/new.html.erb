@@ -1,0 +1,49 @@
+<h3><%= t '.title' %></h3>
+<% if @storage.post_process == :resize_image %>
+  <script>
+    var postUpload = function(image_name, uploadSuccess, uploadError) {
+      $.ajax({
+        url: '<%= resize_url %>',
+        type: 'GET',
+        data: {image: image_name},
+        async: false,
+        cache: false,
+        dataType: 'jsonp',
+        success: function(retdata) {
+          cb.setImageField('<%= @field_name %>', image_name);
+          cb.closeModal();
+        },
+        error: function(err) {
+          uploadError();
+        }
+      });
+    };
+  </script>
+<% else %>
+  <script>
+    var postUpload = function(image_name, uploadSuccess, uploadError) {
+      cb.setImageField('<%= @field_name %>', image_name, false);
+      cb.closeModal();
+    };
+  </script>
+<% end %>
+
+<%= render  partial: 'contents/upload_form',
+            locals:  {  media:  { name:   "#{@path_prefix}/img-#{Time.now.to_i}" },
+                        transport: 'xhr',
+                        timeout:   90000,
+                        storage:   @storage,
+                        form_id:   "#{@field_name}_uploadForm",
+                        doneLinkUrl:   '#',
+                        messages: { typeError:       t('.errors.type', types: 'jpg, jpeg, png, gif'),
+                                    uploadError:     t('.errors.upload'),
+                                    postUploadError: t('.errors.post_upload', file: ''),
+                                    limits:          t('.limits', size: @storage.max_size / (1024*1024)),
+                                    inProgress:      t('.in_progress'),
+                                    success:         t('.success'),
+                                    doneLinkLabel:   t('.done_link'),
+                                    select:          t('.select')
+                                  }
+                     } %>
+
+<%= resize_ping_img %>

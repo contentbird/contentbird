@@ -1,0 +1,41 @@
+<section>
+    <h1 class="h2"><%= t '.title' %></h1>
+    <div class="box">
+        <div class="box-bd">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                <%= render "shared/error_messages", target: resource %>
+                <div>
+                    <%= f.label :nest_name %>
+                    <%= f.text_field :nest_name, autofocus: true, placeholder: t('activerecord.attributes.cb/core/user.nest_name') %>
+                </div>
+                <div>
+                    <%= f.label :email %>
+                    <%= f.email_field :email, placeholder: t('activerecord.attributes.cb/core/user.email') %>
+                </div>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                    <div><%= t('.waiting_confirmation', email: resource.unconfirmed_email) %></div>
+                <% end %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <div class="cell-content">
+                            <%= f.label :locale %>
+                            <%= f.select(:locale, {'English' => 'en' , 'French' => 'fr' }, {include_blank: raw(t('.auto'))}, class: 'cell-fill') %>
+                        </div>
+                    </div>
+                    <div class="cell ratio1">
+                    </div>
+                </div>
+                <div>
+                    <%= f.label :password , raw(t('.password_instruction')) %>
+                    <%= f.password_field :password, autocomplete: 'off' %>
+                </div>
+                <div>
+                    <%= f.submit t('.submit') %>
+                </div>
+            <% end %>
+            <p>
+                <%= t('.unhappy?') %>&nbsp;&nbsp;<%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('defaults.sure') }, method: :delete %>
+            </p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<section class="channels">
+	<h1 class="h2"><%= t '.title' %></h1>
+	<div class="box">
+		<div class="box-bd">
+		    <%= form_for @channel, as: :channel, url: api_channel_path(@channel) do |f| %>
+		        <%= render 'form', f: f %>
+		        <%= link_to t('actions.delete'), api_channel_path(@channel), method: :delete, class: 'butn delete', data: {confirm: t('defaults.sure')} %>
+		    <% end %>
+	    </div>
+	</div>
+</section>

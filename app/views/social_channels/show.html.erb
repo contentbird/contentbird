@@ -1,0 +1,25 @@
+<section class="channels">
+	<h1 class="h2"><%= t '.title', provider: @channel.provider, channel: @channel.name %></h1>
+    <div class="box">
+        <div class="box-bd">
+            <%= channel_edit_link @channel, class: 'rFloat' %>
+            <% if @channel.allow_social_feed? %>
+                <p>
+                    <%= t '.url_label' %> 
+                    <%= link_to @channel.web_url, '//'+ @channel.web_url, target: '_blank' %>
+                </p>
+            <% end %>
+            <%= link_to t('.check_connection', provider: @channel.provider),
+                        check_credentials_social_channel_path(@channel),
+                        id: "check_creds_butn_#{@channel.id}",
+                        remote: true,
+                        class: 'butn togl-off',
+                        data: {icon: raw(channel_picto(@channel))},
+                        onclick: "$('#check_creds_butn_#{@channel.id}').removeClass('togl-off').addClass('togl-work');"
+                         %>
+            <div id="check_creds_result_<%=@channel.id%>"></div>
+            <%= render 'last_publication' %>
+        </div>
+    </div>
+	<%= render 'publications', publications: @publications %>
+</section>

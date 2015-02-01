@@ -1,0 +1,19 @@
+<header class="cTxt">
+    <% if @publication.expire_at.present? %>
+        <%= t '.expire_in', expire_at: unpublish_countdown(@publication.expire_at) %>
+    <% else %>
+        <%= t '.unpublish' %>
+    <% end %>
+</header>
+
+<div class="row">
+    <div class="cell ratio1">
+        <%= time_button(@publication, :day) %>
+    </div>
+    <div class="cell ratio1">
+        <%= time_button(@publication, :week) %>
+    </div>
+    <div class="cell ratio1">
+        <%= time_button(@publication, :month) %>
+    </div>
+</div>

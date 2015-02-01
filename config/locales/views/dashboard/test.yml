@@ -1,0 +1,20 @@
+test:
+  dashboard:
+    index:
+      title: "My dashboard"
+      start:
+        title: Getting started
+        format_title: "Formats: Structure your content"
+        format_text: "For your content to be reusable, ContentBird helps you define its structure using what we call formats. To get you started quickly, and show you a few examples, we bootstrapped a few formats you can use as is or enhance with your own data. You can also create your own formats taylored to your needs."
+        content_title: "Contents: Author and share your data, on your terms"
+        content_title_advanced: "Contents: Author and share your data, on your terms"
+        content_text: "Create contents based on your formats, share them selectively without giving them away. ContentBird keeps them in one place so you can easily find them and restrain or cancel their publication."
+        content_text_advanced: "Create contents based on your formats, share them selectively without giving them away. ContentBird keeps them in one place so you can easily find them and restrain or cancel their publication."
+        channel_title: "Channels: Define how and where you share your content"
+        channel_title_advanced: "Channels: Define how and where you share your content"
+        channel_text: "A channel is a medium you share some of your contents to. It can be a social network, a website on contentbird.me, or our API if you want to manipulate your data through code. You control your channels: you can close them, change their access codes, or customize their look&feel."
+        channel_text_advanced: "A channel is a medium you share some of your contents to. It can be a social network, a website on contentbird.me, or our API if you want to manipulate your data through code. You control your channels: you can close them, change their access codes, or customize their look&feel."
+      invite:
+        title: Tell your friends
+        email: Your friend's email
+        submit: Send an invitation

@@ -1,0 +1,18 @@
+test:
+  upload:
+    new:
+      title: Upload your image
+      errors:
+        type: "you can only upload image files : %{types}"
+        upload: "Sorry, your file could not be uploaded"
+        post_upload: "Sorry, your file %{file} could not be saved"
+        max_upload_number: "Slow down please, no more than %{count} files at a time"
+      limits: "jpg, png or gif, no more than %{size} Mb"
+      in_progress: "uploading in progress..."
+      success: "file succesfully uploaded"
+      done_link: "back"
+      select: Select
+  multi_uploads:
+    new:
+      title: Upload your images
+      drop: Drop files here !<br />or

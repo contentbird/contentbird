@@ -1,0 +1,27 @@
+<% if publications.any? %>
+    <% content_for :load_script do %>
+        cb.triggerPublications();
+    <% end %>
+    <div class="box" id="publications_list">
+        <div class="box-hd">
+             <%= t '.intro' %>
+        </div>
+        <div class="box-bd grid">
+            <% publications.each do |publication| %>
+                <div class="row" id="content_<%=publication.content_id%>">
+                    <div class="cell ratio1">
+                        <%= link_to publication.content.title, content_path(publication.content_id) %>&nbsp;&nbsp;
+                    </div>
+                    <div class="cell ratio1">
+                        <%= publication.content.content_type.title %>
+                    </div>
+                    <div class="cell" id="publish_widget_<%=publication.content_id%>_<%=@channel.id%>">
+                        <%= publish_button @channel, publication, publication.content_id %>
+                    </div>
+                </div>
+                <div id="publications_error_<%=publication.content_id%>" class="error sub-row" style="display:none;"></div>
+            <% end %>
+            <%= paginate publications %>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,3 @@
+$("#publications_for_<%=@content_id%>").html('<%= j render(partial: "publications", locals: {publications: @publications, content_id: @content_id}) %>').show()
+$('#show_pub_<%=@content_id%>').hide();
+$('#hide_pub_<%=@content_id%>').show();

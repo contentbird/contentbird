@@ -1,0 +1,33 @@
+<div class="box">
+	<div class="box-bd grid">
+		<% @contents.each do |content| %>
+		    <% type = @type || content.content_type %>
+			<div class="row with-sub-row with-butn-mob _withButnMob" id="content_<%=content.id%>">
+			    <%= link_to '', '#', data: {icon: raw("&#xe000;")}, class: "butn-mob-menu _butnMobMenu" %>
+				<div class="cell ratio3">
+					<%= link_to content.title, content_path(content.id) %>&nbsp;&nbsp;
+			    </div>
+			    <div class="cell ratio1 nomob">
+			    	<%= link_to type.translated_title, contents_path(content_type_id: type.id) %>
+			    </div>
+			    <div class="cell ratio2">
+			    	<div class="cTxt">
+				    	<%= link_to publications_path(content_id: content.id), remote: true, id: "show_pub_#{content.id}", data: {icon: raw("&#xe010;")} do %>
+			                <span id="pub_count_<%=content.id%>"><%= content.publications_count %></span> <%=t('.publications')%>
+			            <% end %>
+			            <%= link_to t('contents.shared.hide_publications'), '#', id: "hide_pub_#{content.id}", class: 'hide_pub', style: 'display: none', data: {content_id: content.id.to_s, icon: raw("&#xe015;")} %>
+		            </div>
+			   	</div>
+			    <div class="cell">
+			    	<div class="butn-mob _butnMob">
+				    	<%= link_to '', edit_content_path(content.id), id: "content_edit_#{content.id}", data: {icon: raw("&#xe00c;"), no_turbolink: true}, class: 'butn-no-text' %>
+				    	<%= link_to '', content_path(content.id), method: :delete, data: {icon: raw("&#xe00b;"), confirm: t('contents.shared.confirm')}, class: "remove butn-no-text" %>
+			    	</div>
+			    </div>
+		 	</div>
+		 	<div class="sub-row">
+		 		<div id="publications_for_<%=content.id%>" style="display: none"></div>
+		 	</div>
+		<% end %>
+	</div>
+</div>

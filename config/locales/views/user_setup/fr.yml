@@ -1,0 +1,10 @@
+fr:
+  user_setup:
+    new:
+      welcome: 'Bienvenue sur ContentBird, %{nest_name} !'
+      offered_website: 'Nous vous avons préparé un site web pour partager vos données :'
+      add_social_networks: 'Commencez par ajouter les médias sociaux que vous utilisez :'
+      good_job: C'est noté
+      note: 'NB: Afin de publier sur vos canaux sociaux, vous devrez autoriser ContentBird à poster en votre nom. Cliquez sur chaque logo ci-dessus pour donner cette permission à ContentBird.'
+      note_safe: Nous ne posterons jamais en votre nom sans une action explicite de votre part.
+      imdone: J'ai terminé

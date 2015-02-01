@@ -1,0 +1,16 @@
+fr:
+  content_types:
+    form:
+      title: Donnez-lui un nom
+      title_label: "Tous les formats ont un champ titre, pas besoin d'en créer un, mais vous pouvez saisir ici son libellé:"
+      add_property: Ajouter une propriété
+    edit:
+      title: Editer le format
+      confirm: "Etes-vous sûr ? Cela supprimera tous vos formats %{content_type}"
+    index:
+      title: Mes formats
+      new: Nouveau format
+    new:
+      title: Nouveau format
+      cancel: l'annuler
+      fork: "Vous voulez changer un format partagé ? Nous en avons fait une copie pour vous. Vous pouvez le modifier à volonté ou <a href=\"%{cancel_url}\">%{cancel_text}</a>."

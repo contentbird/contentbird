@@ -1,0 +1,23 @@
+test:
+  cb:
+    beta: ContentBird beta
+    copyright: "&copy; %{year} ContentBird"
+  time:
+    formats:
+      z: "%d-%m-%YT%H:%M:%SZ"
+      html5: "%Y-%m-%d %H:%M"
+      sql: "%Y-%m-%d %H:%M:%S.%6N"
+  defaults:
+    is_on: 'ON'
+    is_off: 'OFF'
+    sure: 'Are you sure?'
+    how_it_works: 'How does it work ?'
+    show_options: Show options
+    hide_options: Hide options
+  actions:
+    create: 'Create'
+    cancel: 'Cancel'
+    delete: 'Delete'
+  ago: 'ago'
+  or: 'or'
+  next_hour: "1 hour top"

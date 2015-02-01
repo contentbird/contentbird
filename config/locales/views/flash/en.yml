@@ -1,0 +1,62 @@
+en:
+  channels: &chan_notice
+    create:
+      notice: Your channel was saved !
+    update:
+      notice: "Your channel %{channel_name} was updated"
+    reset_access_token:
+      notice: Access token was updated
+      error: "Sorry, we could not reset your token"
+    destroy:
+      notice: 'Your channel was deleted'
+      error: 'Sorry, we could not delete your channel'
+    open:
+      notice: 'Your channel is opened'
+      error: 'Sorry, we could not open your channel'
+    close:
+      notice: 'Your channel is closed'
+      error: 'Sorry, we could not close your channel'
+  social_channels:
+    <<: *chan_notice
+  api_channels:
+    <<: *chan_notice
+  messaging_channels:
+    <<: *chan_notice
+  content_types:
+    create:
+      notice: 'Your format was saved !'
+    update:
+      notice: 'Your format was saved and all dependent contents will be updated shortly'
+    destroy:
+      notice: 'Your format was deleted'
+      error: 'Sorry, we could not delete your format'
+  contents:
+    new:
+      error: 'Sorry could not create your content'
+    create:
+      notice: "Your %{title} was saved !"
+    update:
+      notice: "Your %{title} was saved !"
+    destroy:
+      notice: "Your %{type} %{content} was deleted"
+      error: "Sorry, we could not delete your %{type} %{content}"
+  leads:
+    create:
+      notice: 'Thank you, we will send you an invite as soon as we can'
+      error: "Sorry, we could not save your email, perhaps you've already subscribed the beta ?"
+  publications:
+    create:
+      notice: "This channel did not have a section for this format, so we created it for you. Click <a href=\"%{url}#bottom\">here</a> to tune this new section"
+      error: "Sorry, we could not publish your content"
+    destroy:
+      notice: "Sorry, we could not unpublish your content"
+      manual_unpublication_needed: "Your content is now unreachable, but LinkedIn does not allow us to remove your post from your feed. Connect to LinkedIn and delete it manually."
+  registrations:
+    alert: 'Registration requires a beta invitation, please apply first'
+  invitations:
+    create:
+      notice: 'Your invitation was sent'
+  contacts:
+    create:
+      error: 'Error while creating your contact'
+      your_own_email: 'No need to add yourself to the list : You will receive a copy of every email'

@@ -1,0 +1,10 @@
+<section class="channels">
+	<h1 class="h2"><%= t '.title' %></h1>
+	<div class="box">
+	    <div class="box-bd">
+	    	<%= form_for @channel, as: :channel, url: {action: :create}, multipart: true do |f| %>
+	        	<%= render 'form', f: f %>
+	    	<% end %>
+	    </div>
+	</div>
+</section>

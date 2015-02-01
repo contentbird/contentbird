@@ -1,0 +1,11 @@
+test:
+  activerecord:
+    models:
+      cb/core/content_property: 'content_property'
+    attributes:
+      cb/core/content_property:
+        name: name
+        content_type_id: content_type_id
+        created_at: created_at
+        updated_at: updated_at
+        title: title

@@ -1,0 +1,11 @@
+<section class="contents-types">
+	<h1 class="h2"><%= t '.title' %></h1>
+	<div class="box">
+		<div class="box-bd">
+			<%= form_for @type, as: :content_type, url: content_type_path(@type.id) do |f| %>
+		    	<%= render 'form', f: f %>
+		    	<%= link_to t('defaults.delete'), content_type_path(@type.id), method: :delete, class: 'butn delete', data: {confirm: t('.confirm', content_type: @type.title) } %>
+			<% end %>
+		</div>
+	</div>
+</section>

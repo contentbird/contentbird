@@ -1,0 +1,25 @@
+<%= link_to t('actions.create'), '#', class: 'butn action triggerMenu', data: {icon: raw("&#xe001;"), menu_id: 'createContent'} %>
+<div id="createContent" class="butnMenu" style='<%= params[:unfold_create_btn] == 'true' ? 'display:block;' : 'display:none;' %>' data-no-turbolink>
+    <h2><%= t '.create' %></h2>
+    <% if current_type %>
+        <%= link_to current_type.translated_title, new_content_path(content_type_id: current_type.id), data: (current_type.picto.present? ? {icon: raw(current_type.picto)} : nil), class: "butn action#{current_type.by_platform? ? ' shared' : ''}" %>
+        <% if types.size > 1 %>
+            <h2><%= t '.create_other' %></h2>
+        <% end %>
+    <% end %>
+    <ul>
+        <% types.each do |type| %>
+            <% if can_display_type?(type) %>
+                <% unless current_type && current_type.id == type.id %>
+                    <li>
+                        <%= link_to type.translated_title,
+                                    new_content_path(content_type_id: type.id),
+                                    data: (type.picto.present? ? {icon: raw(type.picto)} : nil),
+                                    class: "butn action#{type.by_platform? ? ' shared' : ''}" %>
+                    </li>
+                <% end %>
+            <% end %>
+        <% end %>
+    </ul>
+    <%= t('.tip') %> "<%= t('content_type_name.link') %>"
+</div>

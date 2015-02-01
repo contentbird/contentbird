@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Admin Tool</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%= favicon_link_tag image_path(FAVICON_PATH) %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= stylesheet_link_tag "admin", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+        <script type="text/javascript" src="//use.typekit.net/lvc6dih.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <%= yield :head %>
+    </head>
+    <body>
+        <div id="page" class="admin-page">
+            <div id="main" role="main">
+                <header>
+                    <div class="header-top" id='headerTop'>
+                        <div class="header-logo">
+                            <h2><%= link_to 'CB Admin', admin_root_path %></h2>
+                        </div>
+                        <div class="admin-nav">
+                            <%= link_to 'Metrics', admin_metrics_path %>
+                            <%= link_to 'Users', admin_users_path %>
+                            <%= link_to 'Jobs', admin_jobs_path %>
+                        </div>
+                    </div>
+                    <div id="flash" class="flash">
+                        <% if notice.present? %><div class="notice"><%= notice %></div><% end %>
+                        <% if alert.present? %><div class="alert"><%= alert %></div><% end %>
+                    </div>
+                </header>
+                <section>
+                    <div class="box">
+                        <h1 class="h2"><%= @title %><%= " > #{@sub_title}" if @sub_title.present? %></h1>
+                        <div class="box-bd">
+                            <%= yield %>
+                        </div>
+                    </div>
+                </section>
+                <footer>
+                    <h3 class="cTxt">ContentBird Admin Tool</h3>
+                </footer>
+                <a name="bottom">&nbsp;</a>
+            </div>
+        </div>
+        <script>
+            cb.decorateForms();
+            <%= yield :load_script %>
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+test:
+  activerecord:
+    models:
+      cb/core/content: 'content'
+    attributes:
+      cb/core/content:
+        title: title
+        owner_id: owner_id
+        content_type_id: content_type_id
+        properties: properties
+        created_at: created_at
+        updated_at: updated_at
+        slug: slug
+        publications_count: publications_count

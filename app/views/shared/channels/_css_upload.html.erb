@@ -1,0 +1,8 @@
+<div>
+    <%= f.label :css %>
+    <% if @channel.css? %>
+        <%= link_to t('.open'), @channel.css.url, target: '_blank' %>
+        <%= f.check_box :remove_css %> <%= t('.remove') %>
+    <% end %>
+    <%= f.file_field :css %>
+</div>

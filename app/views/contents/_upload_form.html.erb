@@ -1,0 +1,52 @@
+<% messages[:typeError] 		#||= t('view.upload.type_error') 		%>
+<% messages[:uploadError] 		#||= t('view.upload.upload_error') 		%>
+<% messages[:postUploadError] 	#||= t('view.upload.post_upload_error') %>
+<% messages[:limits] 			#||= t('view.upload.limits') 			%>
+<% messages[:inProgress] 		#||= t('view.upload.in_progress')		%>
+<% messages[:success] 			#||= t('view.upload.success')			%>
+<% messages[:doneLinkLabel] 	#||= t('view.upload.done_link_label')	%>
+<% messages[:select] 	        	                                    %>
+
+<div>
+	<form id="<%=form_id%>" action="<%=storage.url%>" method="post" enctype="multipart/form-data">
+		<div class="errorMsg error" style="display:none"></div>
+		<div class="successMsg notice" style="display:none"></div>
+	    <input type="hidden" name="acl" value="public-read">
+	    <input type="hidden" name="bucket" value="<%=storage.bucket%>">
+	    <input type="hidden" name="Content-Type" value="image/jpeg">
+	    <input type="hidden" name="key" >
+	    <input type="hidden" name="<%= storage.provider == 'AWS' ? 'AWSAccessKeyId' : 'GoogleAccessId'%>" value="<%=storage.access_key%>">
+	    <input type="hidden" name="policy" value="policy">
+	    <input type="hidden" name="signature" value="signature">
+	    <% if transport == 'iframe' %>
+	    	<input type="hidden" name="success_action_redirect" value="redirect">
+	    <% end %>
+	    <div class="photosUpload">
+    	    <div class="fileUpload">
+		        <div class="butn action fileinput-button">
+					<span><%= messages[:select] %></span>
+					<input class="fileinput" name="file" type="file">
+				</div>
+		    </div>
+
+		    <progress value="0" max="100" style="display: none;">
+		    	<% if transport == 'iframe' %>
+	    			<span><%= messages[:inProgress] %></span>
+	    		<% else %>
+	    			<span></span>
+	    		<% end %>
+		    </progress>
+
+	        <div class="filesSize mtm tac">
+	        	<%= messages[:limits] %>
+	        </div>
+		    <div class="loading" style="display:none">
+		        <%= messages[:inProgress] %>
+		    </div>
+		</div>
+	</form>
+</div>
+
+<script>
+    uploadifyForm('#<%=form_id%>', '<%=media[:name]%>', '<%=upload_sign_form_path %>', '<%=transport%>', '<%= doneLinkUrl%>', '<%= storage.storage_name%>', '<%=raw(escape_javascript(messages.to_json))%>');
+</script>

@@ -1,0 +1,51 @@
+test:
+  layouts:
+    application:
+      title: ContentBird
+      main_nav:
+        formats: Formats
+        contents: Contents
+        channels: Channels
+      account_nav:
+        my_account: My account
+        my_profile: My profile
+        logout: Logout
+      feedback:
+        question: 'questions ?'
+        alt: "Need help, want to give us feedback about ContentBird ?"
+      about: About
+      privacy: Privacy
+      terms: Terms of service
+      website: www.contentbird.com
+    full_page:
+      title: ContentBird
+    home:
+      title: ContentBird
+      meta:
+        og_title: ContentBird
+        og_description: "A better way to host and share your personal content on social networks : keep your data, publish a link, cancel it anytime."
+        description: "A better way to host and share your personal content on social networks : keep your data, publish a link, cancel it anytime."
+        keywords: "privacy, personal data, social networks, sharing, content, photo, album, right to be forgotten, remove tracks, no ad, ad free"
+      welcome_back: "Welcome back, %{name} ! "
+      contact: Contact us
+      about: About
+      privacy: Privacy
+      terms: Terms of service
+      sign_in: Sign in
+      sign_up: Sign up
+      to_dashboard: to my dashboard
+    public:
+      title: ContentBird
+      meta:
+        og_title: ContentBird
+        og_description: "A better way to host and share your personal content on social networks : keep your data, publish a link, cancel it anytime."
+        description: "A better way to host and share your personal content on social networks : keep your data, publish a link, cancel it anytime."
+        keywords: "privacy, personal data, social networks, sharing, content, photo, album, right to be forgotten, remove tracks, no ad, ad free"
+      welcome_back: "Welcome back, %{name} ! "
+      contact: Contact us
+      about: About
+      privacy: Privacy
+      terms: Terms of service
+      sign_in: Sign in
+      sign_up: Sign up
+      to_dashboard: to my dashboard

@@ -1,0 +1,23 @@
+<section>
+    <div class="grid-no-border">
+        <div class="row">
+            <div class="cell ratio1"></div>
+            <div class="cell ratio3">
+                <div class="box">
+                    <div class="box-hd">
+                        <h1><%= t '.title' %></h1>
+                    </div>
+                    <div class="box-bd">
+                        <p><%= raw t('.registration_closed') %></p>
+                        <%= render "shared/error_messages", target: @lead %>
+                        <%= form_for @lead, as: :lead, url: {controller: :leads, action: :create} do |f| %>
+                            <%= f.email_field :email, placeholder: t('.email'), autofocus: true %>
+                            <%= f.submit t('.participate') %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <div class="cell ratio1"></div>
+        </div>
+    </div>
+</section>

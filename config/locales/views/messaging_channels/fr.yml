@@ -1,0 +1,17 @@
+fr:
+  messaging_channels:
+    show:
+      title: 'Canal email %{channel}'
+      subscribers: 'Abonnés à la liste de diffusion :'
+    form:
+      allow_social_feed: Permettre de lister les contenus
+      privacy_warning: "Attention vie privée: cocher cette case dote votre canal liste de diffusion d'une page d'accueil qui liste vos publications. N'activez cette option que si vous souhaitez donner un accès facile à ces publications pour tout internaute."
+    edit:
+      title: "Editer un canal %{provider}"
+    new:
+      title: "Nouveau canal %{provider}"
+    channel_subscriptions:
+      subscribers:
+        label: Ajouter des personnes à votre liste de diffusion
+        placeholder: Saisir un email et appuyer sur entrée
+        max_info: 'Le nombre de personnes dans votre liste de diffusion est limité à 10.'

@@ -1,0 +1,13 @@
+<%= form_for @content, as: :content, url: '' do |f| %>
+    <!-- begin_cut_zone -->
+    <%= render "shared/error_messages", target: @content %>
+    <% title_label = @content.content_type.title_label %>
+    <%= f.label :title, title_label.present? ? title_label : t('contents.form.add_title') %>
+    <%= f.text_field :title, required: true%>
+    <%= f.fields_for :properties, OpenStruct.new(@content.properties) do |builder| %>
+        <% @content.content_type.properties.each do |field| %>
+            <%= render "api/contents/fields/#{field.content_type.name}", field: field, f: builder, content_type: @content.content_type %>
+        <% end %>
+    <% end %>
+    <!-- end_cut_zone -->
+<% end %>

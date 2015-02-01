@@ -1,0 +1,11 @@
+fr:
+  channel_unsubscriptions:
+    new:
+      title: Désinscrivez-vous de la liste de diffusion
+      email_placeholder: 'Entrez votre email'
+      submit: 'Me désinscrire'
+    create:
+      title: Merci
+      error: "Désolé, nous n'avons pas pu vous désinscrire de la liste de diffusion"
+      wrong_email: "Cet email n'est pas abonné à la liste de diffusion"
+      success: Nous avons bien supprimé votre adresse email de la liste de dissusion associée. Bonne journée.

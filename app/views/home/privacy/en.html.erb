@@ -1,0 +1,57 @@
+<section>
+    <article class="box narrow">
+        <header class="box-hd">
+            <h1>Personal Data and Privacy</h1>
+        </header>
+
+        <p>We are fanatic about Privacy, so we tried to be clear and precise. The document is a bit long, but we hope it gives you a clear picture on this subject.</p>
+
+        <h2>Personal Data</h2>
+
+        <p>We only ask for your email and a password. These pieces of information are given to nobody : not to other users nor to any thrid party. We do not store your password in plain text: it is encrypted and salted.</p>
+
+        <h2>Your content</h2>
+
+        <p>Contents you create on ContentBird are only distributed once you publish them. They are stored on our database, hosted on Heroku in Europe (Dublin). Aside your publications, we do not distribute your content to other users nor to a thrid party.</p>
+
+        <p>Medias (images, galleries...) are stored on Amazon S3 Europe (Dublin), and their URL are obfuscated in a way that's its very unlikely that someone access them aside from your publications.</p>
+
+        <h2>Unpublish</h2>
+
+        <p>When you unpublish a content, he isn't anymore available to anyone on ContentBird. If it's a social publication on an external social network we use their API to unpublish your post. But, even is these social networks keep your publication without telling you, the only things they have are a title and a broken link.</p>
+
+        <h2>Data removal</h2>
+
+        <p>When you remove a content from ContentBird, it is physically destroyed. We do not keep anything. It's instantly removed from our databse and associated medias are removed a few seconds / minutes later.</p>
+
+        <p>If you unsubscribe, we remove all references from our servers : database and files. Once again this cannot be undone, but its the guaranty that you are in control of your data from start to end .</p>
+
+        <h2>Cookies</h2>
+
+        <p>We use session cookies without any personal information. It's used to keep your authentication while visiting the Site. If you don't allow this cookie, you won't be able to use our service. You can still remove it after each visitthis as no negative impact on the user expereience on ContentBird.</p>
+
+        <p>If you use the "remember me" feature when you log in, we place a second cookie for a larger period of time so you don't have to fill in you username and password every time. This second cookie is optional.</p>
+
+        <h2>Logs and monitoring</h2>
+
+        <p>Our logs on heroku are only used for trouble diagnosis. We do not download them : we only have a look at them in real time.</p>
+
+        <p>We use New Relic to measure our QoS and track ContentBird response times. We do provide no personal information to New Relic. NewRelic uses a small scrit at the bottom of our pages, this way we can track your browser load time and have a better understanding of the distribution of user browsers, so we can improve the service.</p>
+
+        <h2>Analytics</h2>
+
+        <p>We use Piwik open source software to better understand the usage you make of contentbird. We chose this solution better than Google Analytics so we don't have to give this information to Google.</p>
+
+        <p>This is an anonymous process. We do not store in Piwik personal information.</p>
+
+        <p>Anyway, if this his annoying to you, you can use the form below so Piwik don't collect anything from you.</p>
+
+        <%= render 'home/privacy/piwik_iframe' %>
+
+        <p>This will place a cookie on your browser so Piwik wiil ignore you from now on. If this cookie is lost come back to this page and uncheck the bow again.</p>
+
+        <p>That's it , we hope we ansered your questions regarding personnal information. If you find something's mising here, don't hesitate to contact us on <a href="mailto:contact@contentbird.com">contact@contentbird.com</a>.</p>
+
+        <p>ContentBird Team</p>
+    </article>
+</section>

@@ -1,0 +1,20 @@
+fr:
+  dashboard:
+    index:
+      title: "Mon espace privé"
+      start:
+        title: Démarrez rapidement
+        format_title: "Formats: créez et structurez"
+        format_text: "Pour que vous puissiez réutiliser vos données, ContentBird vous aide à les structurer à l'aide de gabarits appelés formats. Nous avons préparé des formats de base (album photo, post, lien) que vous pouvez utiliser tels quels, enrichir pour ajouter les données qui vous manquent, ou créer les vôtres."
+        content_title: "Contenus: créez et partagez "
+        content_title_advanced: "Contenus: créez et partagez"
+        content_text: "Créez vos contenus et partagez vos albums photos, articles de blog et vos liens vidéos ou musiques. ContentBird vous permet de les retrouver facilement en un seul endroit et surtout de restreindre ou d'annuler leur publication."
+        content_text_advanced: "Créez vos contenus et partagez vos formats. ContentBird vous permet de les retrouver facilement à un seul endroit et surtout de restreindre ou d'annuler leur publication."
+        channel_title: "Canaux: gérez votre vie privée"
+        channel_title_advanced: "Canaux: créez et gérez"
+        channel_text: "Créez vos canaux de diffusion en connectant ContentBird à Facebook, LinkedIn et Twitter. Les canaux vous permettent de retrouver facilement vos contenus et de savoir où ils sont publiés."
+        channel_text_advanced: "Créez vos canaux et connectez ContentBird à vos médias sociaux, vos sites web, contentbird.me ou l'API si vous voulez manipuler vos données dans vos programmes. Les canaux permettent de retrouver facilement vos contenus et de savoir ou ces derniers sont publiés. Vous pouvez les fermer, changer leurs codes d'accès ou personnaliser leur apparence."
+      invite:
+        title: Faites découvrir ContentBird
+        email: Entrez l'email d'un ami
+        submit: Envoyer l'invitation

@@ -1,0 +1,26 @@
+<section class="contents-types">
+    <h1 class="h2"><%= t '.title' %></h1>
+    <section class="actions">
+        <%= link_to t('.new'), new_content_type_path, class: 'butn action', data: {icon: raw("&#xe001;")} %>
+    </section>
+    <div class="box">
+        <div class="box-bd grid" id="ct_list">
+            <% @types.each do |type| %>
+                <div class="row <%= type.owned_by?(current_user) ? nil : 'shared' %>" id="ct_<%=type.to_param%>">
+                    <div class="cell ratio2">
+                        <%= link_to type.translated_title, contents_path(content_type_id: type.id) %>
+                    </div>
+                    <div class="cell ratio1">
+                        <span class="owner">
+                            by <%= type.owner.nest_name %>
+                        </span>
+                    </div>
+                    <div class="cell">
+                        <%= link_to '', new_content_path(content_type_id: type.id), data: {icon: raw("&#xe60c;")}, class: 'butn-no-text' %>
+                        <%= link_to('', edit_content_type_path(type.id), id: "ct_edit_#{type.to_param}", data: {icon: raw("&#xe00c;")}, class: 'butn-no-text') %>
+                    </div>
+                 </div>
+            <% end %>
+        </div>
+    </div>
+</section>

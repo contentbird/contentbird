@@ -1,0 +1,23 @@
+fr:
+  social_channels:
+    form:
+      allow_social_feed: Permettre de lister les contenus
+      privacy_warning: "Attention vie privée: cocher cette case dote votre canal social d'une page d'accueil qui liste vos publications. N'activez cette option que si vous souhaitez donner un accès facile à ces publications pour tout internaute."
+    choose:
+      title: "Nouveau canal social"
+      choose_provider: 'Choisissez votre média social:'
+      note: 'NB: Afin de publier sur vos canaux sociaux, vous devrez autoriser ContentBird à poster en votre nom. Cliquez sur chaque logo ci-dessus pour donner cette permission à ContentBird.'
+      note_safe: Nous ne posterons jamais en votre nom sans une action explicite de votre part.
+    edit:
+      title: "Editer un canal %{provider}"
+    new:
+      title: "Nouveau canal %{provider}"
+    show:
+      title: 'Canal %{provider} %{channel}'
+      url_label: 'Url :'
+      check_connection: 'Tester la connexion à %{provider}'
+    check_credentials:
+      valid: 'Votre connexion est validée'
+      broken: "La connexion n'a pas pu être établie."
+      retry: "réessayez"
+      authorize_again: "autorisez de nouveau ContentBird"

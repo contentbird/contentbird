@@ -1,0 +1,18 @@
+en:
+  user_mailer:
+    greetings: 'Hello'
+    subscribe: 'Create your account'
+    invite_lead:
+      subject: 'Your invitation to join ContentBird Beta program'
+      invited: 'We are happy to give you an access to the ContentBird beta program.'
+      follow: 'Follow the following link to register:'
+    invitation:
+      subject: '%{name} cares about your privacy'
+      invitation: '%{name} invites you to join the ContentBird beta program, and discover a new way to handle and share your data without loosing its ownership.'
+      discover: 'Discover ContentBird'
+    email_publication:
+      share: "shares this content with you via"
+      who_we_are: "ContentBird is a web content sharing service for those who care about privacy :"
+      discover: 'Discover here'
+      unsubscribe: "I you do not wish to receive future sharing emails from this mailing list,"
+      click_here: "unsubscribe here"

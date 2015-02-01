@@ -1,0 +1,21 @@
+<div class="_imageGalWidget" data-widget-id="<%=field.id%>" data-media-url="<%=media_url(:image).chomp('/')%>" data-widget-data="<%=f.object.send(field.id.to_s).to_json%>">
+    <%= f.label field.id, field.translated_title(content_type).capitalize %>
+    <div class="row">
+        <ul class="gal-images _images _sortableGallery">
+            <li class="_addImageZone image-add">
+                <%= link_to '', new_multi_upload_path(field: field.id, media_type: 'image', sub_folder: content_id), class: '_addImage butn-no-text action', data: {icon: raw("&#xe001;")} %>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script id="template-image_<%=field.id%>" type="text/x-tmpl">
+    <li class="_imageContainer image-container">
+        <div class="image-content _draggableImage" style="background-image: url({%=o.thumbnail%});"></div>
+        <input class="_imageValue _field_<%=field.id%>" name="content[properties][<%=field.id%>][][url]" type="hidden" value="{%=o.path%}">
+        <input class="_imageValue _field_<%=field.id%>" name="content[properties][<%=field.id%>][][legend]" type="text" value="{%=o.legend%}" placeholder="Ajouter une légende">
+        <%= link_to '', '#', class: '_delImage image-del', data: {icon: raw("&#xe00f;")} %>
+    </li>
+</script>
+
+

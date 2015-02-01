@@ -1,0 +1,10 @@
+fr:
+  shared:
+    channels:
+      css_upload:
+        open: Voir le fichier
+        remove: Supprimer la CSS
+      header:
+        add_name: Donnez lui un nom
+      sections:
+        add_section: Ajouter une rubrique

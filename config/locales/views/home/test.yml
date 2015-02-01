@@ -1,0 +1,31 @@
+test:
+  home:
+    index:
+      tagline: You are now free to control your data.
+      subscription: "Renew with privacy"
+      hiw:
+        link: Learn More
+        title: How it works
+        step1:
+          title: Create social channels
+          body: "Allow ContentBird to share your content on your Facebook, LinkedIn and Twitter account. We won't publish anything without your asking, and we don't use your friends network."
+        step2:
+          title: Create and share your content
+          body: "Photo albums, Posts, videos or song links : Choose where you want them to be published. <br />Your content stays on your ContentBird : You only share a link on your social networks."
+        step3:
+          title: Manage privacy
+          body: "On ContentBird you easily find your content and you know where they are publisehd.<br /> When you ask, we remove your publications and we deactivate the link to your content on ContentBird."
+        replay: Play again
+      highlight:
+        title: Free your content from services that use them.
+        link: 'Try ContentBird'
+      assets:
+        asset1:
+          title: Stop beeing the product
+          body: Data is yours. We'll never ever use them. Even to display ads
+        asset2:
+          title: Remove your tracks
+          body: You can change your mind, remove what you said or anything you published. ContentBird gives you the right to be forgotten.
+        asset3:
+          title: Leverage your networks
+          body: You share on existing social networks. No need to create fake accounts to have a private life.

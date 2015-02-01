@@ -1,0 +1,150 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+<% end %>
+
+
+<script type="text/javascript">var current_frame, total_frames, path, length, handle, myobj;
+
+myobj = document.getElementById('myobj').cloneNode(true);
+
+var init = function() {
+  current_frame = 0;
+  total_frames = 60;
+  path = new Array();
+  length = new Array();
+  for(var i=0; i<4;i++){
+    path[i] = document.getElementById('i'+i);
+    l = path[i].getTotalLength();
+    length[i] = l;
+    path[i].style.strokeDasharray = l + ' ' + l; 
+    path[i].style.strokeDashoffset = l;
+  }
+  handle = 0;
+}
+ 
+var draw = function() {
+   var progress = current_frame/total_frames;
+   if (progress > 1) {
+     window.cancelAnimationFrame(handle);
+   } else {
+     current_frame++;
+     for(var j=0; j<path.length;j++){
+         path[j].style.strokeDashoffset = Math.floor(length[j] * (1 - progress));
+     }
+     handle = window.requestAnimationFrame(draw);
+   }
+};
+
+init();
+draw();
+
+var rerun = function() {
+  var old = document.getElementsByTagName('div')[0];
+  old.parentNode.removeChild(old);
+  document.getElementsByTagName('body')[0].appendChild(myobj);
+  init();
+  draw();
+};</script>
+
+<div class="header-img2" id="homeImage">
+    <div class="header-content">
+
+<button onclick="rerun();">Again!</button>
+
+<div id="myobj" width="100%" height="100%">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1500 1000" enable-background="new 0 0 152.5 63.5" xml:space="preserve">
+<path id="i0" fill="none" stroke="#fff" d="M1383.962,1555.953H463.507c-56.25,0-102.273,46.012-102.273,102.25v1431.5c0,56.238,46.023,102.25,102.273,102.25h920.455c56.25,0,102.273-46.012,102.273-102.25v-1431.5C1486.234,1601.966,1440.212,1555.953,1383.962,1555.953L1383.962,1555.953z M923.734,3117.953c-43.888,0-79.5-35.612-79.5-79.5s35.612-79.5,79.5-79.5c43.889,0,79.5,35.612,79.5,79.5S967.623,3117.953,923.734,3117.953L923.734,3117.953zM1383.234,2885.953h-920v-1125h920V2885.953L1383.234,2885.953z"/>
+<path id="i1" fill="none" stroke="#fff" d="M72.205,38.702h6.552v5.148c0,0.48-0.156,0.895-0.468,1.242
+    c-0.312,0.348-0.769,0.522-1.368,0.522h-4.716v12.708h-7.776V45.614h-21.96c-0.6,0-1.128-0.186-1.584-0.558
+    c-0.456-0.372-0.744-0.833-0.864-1.386l-0.9-4.5l24.66-32.94h8.424V38.702z M64.429,21.674c0-0.768,0.023-1.596,0.072-2.484
+    c0.048-0.888,0.132-1.812,0.252-2.772L48.589,38.702h15.84V21.674z"/>
+<path id="i2" fill="none" stroke="#fff" d="M91.166,23.69v34.632H145.5V23.69h-20c0,0,20,0,19.952-8.701
+    c-0.141-25.291-27.119,3.761-27.119,3.761S91.166-10,91.178,14.995c0.004,8.894,18.447,8.63,18.447,8.63L91.166,23.69z"/>
+<path id="i3" fill="none" stroke="#fff" d="M114.125,22.5c0,0-15.75,10.625-16.25,19.25l5.875-3.882l-0.375,11.243
+    c3.75-8.36,13.875-20.485,13.875-20.485s8.875,8.5,9.25,18l0.875-9.5L135.5,42.5c-4.125-11.016-14.75-20-14.75-20
+    s11.983-3.356,15.75-4.625C140.582,16.5,145.393,11.72,139,9c-5.721-2.434-21.506,13.375-21.506,13.375S107.375,11,99.375,8.712
+    c-6.565-1.877-5.954,7.663-0.25,9.663S114.125,22.5,114.125,22.5z"/>
+</svg></div>
+
+
+
+    </div>
+</div>
+<section class="narrow">
+    <header>
+        <h2 class="cTxt">Comment tout cela fonctionne</h2>
+    </header>
+    <h3>Vos canaux</h3>
+    <p>
+        La première chose à faire et de définir et paramètrer vos canaux sociaux (Facebook, Twitter et Linkedin) afin de partager vos contenus.<br>
+        Vous pouvez les activer ou les desactiver et visualiser l'historique des publications.
+    </p>
+    <h3>Vos contenus</h3>
+    <p>
+        Ensuite, vous pouvez créez des contenus à partir des formats existants : posts, albums photos, liens, contacts. Vous pouvez les retrouver facilement, les modifier.<br>
+        Soyez libre de les publier et les dépublier sur vos différents canaux de diffusion. <br>
+        ContentBird publie un titre et un lien sur le média social et lorsque vous dépubliez un contenu, il cesse immédiatement d'être disponible. 
+    </p>
+</section>
+<section>
+    <div class="highlight narrow" style="padding: 3rem ">
+        <h1 class="cTxt ">
+            Libérez vos données des services qui les utilisent. 
+        </h1>
+        <% unless user_signed_in? %>
+            <div class="cTxt">
+                <%= link_to ('Essayez ContentBird'), new_user_registration_path, class: 'butn action background' %>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="features narrow">
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe617;"></div>
+                    <h2 class="cTxt">Arrêter d'être le produit.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    <p>
+                        Réappropriez-vous vos données.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe00f;"></div>
+                    <h2 class="cTxt">Effacer vos données.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Accéder, modifier, effacer les données qui vous concernent. 
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe012;"></div>
+                    <h2 class="cTxt">Garder votre identité.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Maîtrisez vos contenus sous votre vrai nom.
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe010;"></div>
+                    <h2 class="cTxt">Utiliser vos réseaux.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Partagez sur les réseaux sociaux existants et futurs.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

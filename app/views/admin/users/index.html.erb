@@ -1,0 +1,19 @@
+<% admin_title 'Users', 'List' %>
+<%= paginate @users %>
+<div class="grid">
+	<div class="row">
+			<div class="cell ratio1"><strong>Username</strong></div>
+			<div class="cell ratio2"><strong>Email</strong></div>
+			<div class="cell ratio1"><strong>Created when</strong></div>
+			<div class="cell ratio1">&nbsp;</div>
+	</div>
+	<% @users.each do |user| %>
+		<div class="row">
+			<div class="cell ratio1"><%= user.nest_name %></div>
+			<div class="cell ratio2"><%= user.email %></div>
+			<div class="cell ratio1"><%= time_ago_in_words user.created_at %></div>
+			<div class="cell ratio1"><%= link_to 'See', admin_user_path(user), class: 'butn' %><%= link_to 'Login as', become_admin_user_path(user), class: 'butn' %></div>
+		</div>
+	<% end %>
+</div>
+<%= paginate @users %>

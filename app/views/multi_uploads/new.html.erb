@@ -1,0 +1,51 @@
+<h3><%= t '.title' %></h3>
+
+<%= s3_uploader_form :content_image, as: "painting[image_url]", path_prefix: "#{current_user.id}/#{@sub_folder}" do |storage| %>
+    <% options = { file_type:        %w(gif jpg png),
+                   file_type_regexp: '(\.|\/)(gif|jpe?g|png)$',
+                   max_files:        20,
+                   max_size:         storage.max_size / (1024*1024) } %>
+
+    <% messages = { type_error:              t('upload.new.errors.type', types: options[:file_type].join(', ')),
+                    upload_error:            t('upload.new.errors.upload'),
+                    post_upload_error:       t('upload.new.errors.post_upload'),
+                    max_upload_number_error: t('upload.new.errors.max_upload_number', count: options[:max_files]),
+                    limits:                  t('upload.new.limits', size: options[:max_size]),
+                    in_progress:             t('upload.new.in_progress'),
+                    success:                 t('upload.new.success'),
+                    done_link_label:         t('upload.new.done_link'),
+                    select:                  t('upload.new.select') } %>
+
+    <%= content_tag :div, nil, id: 'upload_options',  data: options %>
+    <%= content_tag :div, nil, id: 'upload_messages', data: messages %>
+
+    <div class="errorMsg error" style="display:none"></div>
+    <div class="photosUpload">
+        <div class="fileUpload">
+            <%= raw t('.drop') %>
+            <div class="butn action fileinput-button">
+                <span><%= t 'upload.new.select' %></span>
+                <%= file_field_tag :file, multiple: true, class: 'fileinput drop-file' %>
+            </div>
+        </div>
+    </div>
+    <div class="filesSize mtm tac">
+        <%= messages[:limits] %>
+    </div>
+<% end %>
+<div id="images"></div>
+
+<script id="template-upload" type="text/x-tmpl">
+    <div class="uploadProgress">
+        {%=o.name%}
+        <progress value="0" max="100">
+            <span></span>
+        </progress>
+    </div>
+</script>
+
+<script>
+    cb.loadMultipleUploader();
+</script>
+
+<%= resize_ping_img %>

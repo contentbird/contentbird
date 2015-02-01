@@ -1,0 +1,37 @@
+<style>
+	.darkGray  {background-color: #333333}
+	.gray      {background-color:lighten($darkGray, 34%)}
+	.lightGray {background-color:lighten($darkGray, 74%);}
+	.red       {background-color: #f86363}
+	.blue      {background-color: #1122cc}
+	.green     {background-color: #14cc47}
+	.lightGreen{background-color: #bfe6ca}
+	.yellow    {background-color: #fefddc}
+	.box-color {
+		width: 80px;
+		height: 80px;
+	}
+	}
+</style>
+
+<% content_for :load_script do %>
+    cb.decorateMenuButtons();
+<% end %>
+
+<h1>Styleguide</h1>
+
+<%= render "home/styleguide/nav" %>
+<%= render "home/styleguide/colors" %>
+<%= render "home/styleguide/headings" %>
+<%= render "home/styleguide/buttons" %>
+<%= render "home/styleguide/texts" %>
+<%= render "home/styleguide/paragraphs" %>
+<%= render "home/styleguide/lists" %>
+<%= render "home/styleguide/navigations" %>
+<%= render "home/styleguide/links" %>
+<%= render "home/styleguide/forms" %>
+<%= render "home/styleguide/grids" %>
+<%= render "home/styleguide/box" %>
+<%= render "home/styleguide/draganddrop" %>
+<%= render "home/styleguide/fonts" %>
+<%= render "home/styleguide/gallery" %>

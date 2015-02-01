@@ -1,0 +1,14 @@
+fr:
+  publications:
+    publications:
+      no_channel: 'Pour publier vos contenus, vous devez au préalable <a href="%{url}">créer un canal de diffusion</a>.'
+    show_expiration:
+      expire_in: 'Disparait dans %{expire_at}'
+      cancel: Annuler
+      postpone: "ou prolonger de :"
+      nolimit: Pas de date de fin
+      unpublish: "Dépublier dans :"
+      limit:
+        day: "24h"
+        week: "7 jours"
+        month: "1 mois"

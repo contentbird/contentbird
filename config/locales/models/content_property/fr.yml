@@ -1,0 +1,11 @@
+fr:
+  activerecord:
+    models:
+      cb/core/content_property: 'propriété'
+    attributes:
+      cb/core/content_property:
+        name: Nom d'url
+        content_type_id: Format de donnée
+        created_at: Créé le
+        updated_at: Mis à jour le
+        title: Nom

@@ -1,0 +1,7 @@
+<p><%= t 'user_mailer.greetings' %></p>
+
+<p><%= raw t('.invitation', name: @invitor.nest_name.capitalize) %></p>
+
+<p>
+   <%= link_to t('.discover'), root_url(pk_campaign: 'invitation') %>
+</p>

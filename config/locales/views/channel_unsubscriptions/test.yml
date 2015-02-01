@@ -1,0 +1,11 @@
+test:
+  channel_unsubscriptions:
+    new:
+      title: Unsubscribe from the mailing list
+      email_placeholder: 'Type your email'
+      submit: 'Unsubscribe me'
+    create:
+      title: Thank you
+      error: 'Sorry, we could not unsubscribe you from this mailing list'
+      wrong_email: 'Sorry, wrong email'
+      success: We removed your email

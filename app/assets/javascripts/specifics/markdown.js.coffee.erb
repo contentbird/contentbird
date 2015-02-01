@@ -1,0 +1,73 @@
+cb.decorateMarkdownWidgets = (previewCss) ->
+  version = '1.0.0'
+  $('._markdownWidget').each (index) ->
+    cb.decorateMarkdownWidget $(this), index, previewCss
+
+cb.decorateMarkdownWidget = (widget, index, previewCss) ->
+  md_text_id = widget.find('.mdText').prop('id')
+  md_editor_id = widget.find('.mdEditor').prop('id')
+  marked.setOptions {
+    gfm: true,
+    tables: true,
+    breaks: false,
+    pedantic: false,
+    sanitize: true,
+    smartLists: true,
+    smartypants: false,
+    langPrefix: 'lang-',
+    highlight: (code, lang) ->
+      result = null
+      Rainbow.color code, lang, (highlighted_code) ->
+        result = highlighted_code
+      result
+  }
+  # change
+  opts = {
+    container: md_editor_id,
+    textarea: md_text_id,
+    basePath: '',
+    clientSideStorage: false,
+    localStorageName: md_text_id,
+    useNativeFullscreen: true,
+    parser: marked,
+    file: {
+      name: md_text_id,
+      defaultContent: '',
+      autoSave: 100
+    },
+    theme: {
+      base: '<%=asset_path("plugins/epiceditor/epiceditor_base.css")%>',
+      preview: previewCss,
+      editor: '<%=asset_path("plugins/epiceditor/epiceditor_editor.css")%>'
+    },
+    button: {
+      preview: true,
+      fullscreen: true,
+      bar: true
+    },
+    focusOnLoad: false,
+    shortcut: {
+      modifier: 18,
+      fullscreen: 70,
+      preview: 80
+    },
+    string: {
+      togglePreview: 'Toggle Preview Mode',
+      toggleEdit: 'Toggle Edit Mode',
+      toggleFullscreen: 'Enter Fullscreen'
+    },
+    autogrow: true
+  }
+  new EpicEditor(opts).load()
+
+  handleImageDrop(index)
+
+cb.colorizeCode = ->
+  Rainbow.color()
+
+handleImageDrop = (index) ->
+  dropzone = $('iframe')[index].contentDocument.getElementById('epiceditor-editor-frame').contentDocument.body
+  dropzone.ondrop = (e) ->
+    url = e.dataTransfer.getData("url") || e.dataTransfer.getData("text/uri-list");
+    $(dropzone).append("<br/>![](#{url})")
+    e.preventDefault()

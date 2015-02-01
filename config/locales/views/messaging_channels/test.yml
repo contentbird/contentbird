@@ -1,0 +1,17 @@
+test:
+  messaging_channels:
+    show:
+      title: 'Email channel %{channel}'
+      subscribers: 'Mailing list subscribers :'
+    form:
+      allow_social_feed: Allow social feed
+      privacy_warning: 'Privacy warning: displaying the social feed will allow anyone to browse through your publications on this channel'
+    edit:
+      title: "Edit %{provider} channel"
+    new:
+      title: "New %{provider} channel"
+    channel_subscriptions:
+      subscribers:
+        label: Add people to this mailing list
+        placeholder: Type an email and hit enter
+        max_info: 'You can add up to 10 emails in your mailing list'

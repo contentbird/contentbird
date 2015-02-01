@@ -1,0 +1,16 @@
+<% content_for :load_script do %>
+    cb.decorateImageWidgets();
+<% end %>
+
+<%= render "shared/channels/header", f: f %>
+
+<%= render "shared/channels/prefix_and_baseline", f: f %>
+
+<%= render "shared/channels/css_upload", f: f %>
+
+<%= render "shared/channels/cover_upload", f: f %>
+
+<%= render "shared/channels/sections", f: f %>
+
+<%= f.submit %>
+<%= link_to t('actions.cancel'), channels_path, class: 'butn' %>

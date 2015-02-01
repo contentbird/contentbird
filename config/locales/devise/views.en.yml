@@ -1,0 +1,60 @@
+en:
+  devise:
+    common:
+      sign_in: "Log in"
+      sign_up: "Sign up"
+    shared:
+      links:
+        have_account: If you already have a Contentbird account
+        forgot_password?: "Forgot your password?"
+        missing_confirmation?: "Didn't receive unlock instructions?"
+        missing_unlock?: "Didn't receive unlock instructions?"
+    confirmations:
+      new:
+        title: Resend confirmation instructions
+        submit: Resend confirmation instructions
+    mailer:
+      confirmation_instructions:
+        # welcome: "Bienvenu(e)"
+        instructions: "You can confirm your account email through the link below:"
+        confirm: 'Confirm my account'
+      reset_password_instructions:
+        instructions: "Someone has requested a link to change your password, and you can do this through the link below."
+        change: "Changer mon mot de passe"
+        wrong: "If you didn't request this, please ignore this email."
+        unchange: "Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        # For "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
+        # locked_account_message: "Votre compte a été verrouillé à la suite d'un trop grand nombre de tentatives d'authentification."
+        # For "Click the link below to unlock your account"
+        # unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
+        # unlock_my_account: "Déverrouiller mon compte"
+    passwords:
+      new:
+        title: Forgot your password?
+        submit: Send me reset password instructions
+      edit:
+        title: Change your password
+        new_password: New password
+        submit: Change my password
+    registrations:
+      new:
+        title: Start with a free account
+        submit: Create my account
+      edit:
+        title: Edit my profile
+        waiting_confirmation: "Currently waiting confirmation for: %{email}"
+        auto: Auto detect (recommended)&nbsp;&nbsp;&nbsp;&nbsp;
+        password_instruction: Password <i>(leave blank if you don't want to change it)</i>
+        current_password_instruction: "We need your current password to confirm your changes"
+        submit: "Update my profile"
+        unhappy?: "Unhappy ?"
+        cancel_my_account: "Cancel my account"
+    sessions:
+      new:
+        title: Log in
+        remember_me: Stay logged in
+    unlocks:
+      new:
+        title: Resend unlock instructions
+        submit: Resend unlock instructions

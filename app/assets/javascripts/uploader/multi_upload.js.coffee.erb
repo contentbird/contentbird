@@ -1,0 +1,148 @@
+<% environment.context_class.instance_eval { include UploadHelper } %>
+
+cb.uploadCounter = 0
+cb.addCounter    = 0
+
+cb.decorateImageGalWidgets = () ->
+  $('._imageGalWidget').each () ->
+    cb.decorateImageGalWidget $(this)
+
+cb.decorateImageGalWidget = (widget) ->
+  displayWidget(widget)
+  widget.on 'click', '._delImage', (event) ->
+    deleteImage($(this))
+    event.preventDefault()
+  widget.on 'click', '._addImage', (event) ->
+    cb.openAjaxModal($(this).attr('href'), widget)
+    event.preventDefault()
+
+cb.loadMultipleUploader = () ->
+  $('#fileupload').fileupload
+    add: (e, data) ->
+      checkImageAndStartUpload(data)
+    formData: (form) ->
+      escapeFileName form, this
+    progress: (e, data) ->
+      incrementProgressBar(data) if data.context
+    done: (e, data) ->
+      createThumbnail(data)
+    fail: (e, data) ->
+      displayUploadError($('#upload_options').data('upload-error').replace('%{file}',data.files[0].name), data)
+      decAllCounters()
+
+displayEmptyWidget = (widget) ->
+  widget.find('._addImage').show()
+  widget.find('._delImage').hide()
+
+displayImageGal = (widget) ->
+  images      = widget.data('widget-data')
+  previewData = {domain: widget.data('media-url'), path: '', name: '', legend: ''}
+  for image in images
+    previewData.path      = image.url
+    previewData.thumbnail = cb.thumbnailUrl(previewData.domain+'/'+image.url)
+    previewData.legend    = image.legend
+    addImagePreviewAndFields(previewData, widget)
+
+deleteImage = (element) ->
+  element.closest('._imageContainer').remove()
+
+displayWidget = (widget) ->
+  gallery_data = widget.data('widget-data')
+  if gallery_data
+    displayImageGal(widget)
+  else
+    displayEmptyWidget(widget)
+
+getAddCounter = ->
+  cb.addCounter
+
+incAddCounter = ->
+  cb.addCounter = cb.addCounter + 1
+
+decAddCounter = ->
+  cb.addCounter = cb.addCounter - 1
+
+incUploadCounter = ->
+  cb.uploadCounter = cb.uploadCounter + 1
+
+decAllCounters = ->
+  decAddCounter()
+  cb.uploadCounter = cb.uploadCounter - 1
+  postUploads()    if cb.uploadCounter == 0
+
+addImagePreviewAndFields = (previewData, widget) ->
+  widget    = cb.modal_caller unless widget  #identify the widget if none given
+
+  widget_id = widget.data('widget-id')
+  image = $(tmpl("template-image_#{widget_id}", previewData))
+  widget.find('._images ._addImageZone').before(image)
+
+displayUploadError = (error_msg, data) ->
+  $('.errorMsg').html(error_msg).show()
+
+checkImageAndStartUpload = (data) ->
+  if getAddCounter() < parseInt($('#upload_options').data('max-files'))
+    incAddCounter()
+    types = new RegExp($('#upload_options').data('file-type-regexp'), 'i')
+    file = data.files[0]
+    if types.test(file.type) || types.test(file.name)
+      data.context = $(tmpl("template-upload", file))
+      $('#fileupload').append(data.context)
+      data.form.find('input#Content-Type').val(file.type) if data.form
+      data.submit()
+      incUploadCounter()
+    else
+      displayUploadError $('#upload_messages').data('type-error')
+      decAddCounter()
+  else
+    displayUploadError $('#upload_messages').data('max-upload-number-error')
+
+incrementProgressBar = (data) ->
+  progress = parseInt(data.loaded / data.total * 100, 10)
+  data.context.find('progress').attr('value', progress.toString())
+  data.context.find('progress > span').html(progress.toString()+' %')
+
+escapeFileName = (form, uploader) ->
+  data = form.serializeArray()
+  escapedFilename = removeSpecialChatactersAddUniqueId(uploader.files[0].name)
+  key = $('#fileupload input[name=key]').val()
+    .replace('${filename}', escapedFilename)
+
+  key_field = $.grep data, (n) ->
+    n if n.name == "key"
+
+  if key_field.length > 0
+    key_field[0].value = key
+    uploader.escapedFileName   = key
+
+  data
+
+removeSpecialChatactersAddUniqueId = (filePath) ->
+  extension      = filePath.split('.').pop()
+  originFileName = filePath.substr(0, filePath.lastIndexOf('.'))
+  uniqueId       = Math.random().toString().substr(2,4)
+  originFileName.replace(/[^\w]/gi, '') + '_' + uniqueId + '.' + extension
+
+createThumbnail = (data) ->
+  file   = data.files[0]
+  domain = $('#fileupload').attr('action')
+  path   = data.escapedFileName
+  $.ajax({
+    url: '<%= resize_url%>',
+    type: 'GET',
+    data: {image: path},
+    async: false,
+    cache: false,
+    dataType: 'jsonp',
+    success: (retdata) =>
+      data.context.remove() if data.context # remove progress bar
+      addImagePreviewAndFields({domain: domain, path: path, thumbnail: (domain+'/'+retdata.key)})
+      decAllCounters()
+    ,
+    error: (err) =>
+      displayUploadError($('#upload_messages').data('post-upload-error'), data)
+      decAllCounters()
+  })
+
+postUploads = ->
+  cb.closeModal()

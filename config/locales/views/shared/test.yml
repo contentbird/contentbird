@@ -1,0 +1,10 @@
+test:
+  shared:
+    channels:
+      css_upload:
+        open: Open css file
+        remove: remove css
+      header:
+        add_name: Add a name
+      sections:
+        add_section: Add section

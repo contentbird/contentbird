@@ -1,0 +1,55 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+<% end %>
+<div class="header-img" id="homeImage">
+    <div class="header-content">
+        <div class="box transparent">
+            <div class="box-hd">
+                <div class="row">
+                    <div class="cell ratio2">
+                        <div class="box transparent">
+                            <div class="box-hd">
+                                <h1>Partager vos données<br /> sans jamais les donner</h1>
+                                <!-- Gardez vos données, partagez-les -->
+                                <!-- Gardez la main sur vos données -->
+                                <!-- Votre contenu, vos règles -->
+                            </div>
+                            <div class="box-bd">
+                                <h3 class="cTxt" style="color:white">ContentBird est votre base de donnée privée,<br/> connectée à votre vie</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <% unless user_signed_in? %>
+                        <div class="cell ratio1">
+                            <div class="box transparent">
+                                <div class="box-hd">
+                                    <h1>&nbsp;</h1>
+                                </div>
+                                <div class="box-bd">
+                                    <input type="text" placeholder="Votre nom">
+                                    <input type="text" placeholder="Email">
+                                    <input type="text" placeholder="Mot de passe">
+                                    <div class="cTxt">
+                                        <a class="butn action signUp" href="#">Rejoignez la révolution</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <div class="box-bd cTxt">
+                 <div class="row">
+                        <div class="cell ratio2">
+                            <%= link_to 'En savoir plus', features_path, style: 'color:white' %>
+                        </div>
+                    <% unless user_signed_in? %>
+                        <div class="cell ratio1">
+                            &nbsp;
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

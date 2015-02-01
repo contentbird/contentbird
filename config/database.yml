@@ -1,0 +1,16 @@
+development:
+  adapter: postgresql
+  database: cb_dev
+  host: localhost
+  username: cb
+  password: cb
+
+test: &test
+  adapter: postgresql
+  database: cb_test
+  host: localhost
+  username: cb
+  password: cb
+
+cucumber:
+  <<: *test

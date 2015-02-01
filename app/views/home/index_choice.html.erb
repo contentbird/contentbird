@@ -1,0 +1,23 @@
+<section>
+    <div class="grid-no-border">
+        <div class="row">
+            <div class="cell ratio1"></div>
+            <div class="cell ratio3">
+                <div class="box cTxt">
+                    <div class="box-hd">
+                        <h1>Choisissez une home</h1>
+                    </div>
+                    <div class="box-bd">
+                        <%= link_to 'Brainstorm small image', root_path(home: 'brain_small') %><br /><br />
+                        <%= link_to 'Brainstorm avec image', root_path(home: 'brain_img') %><br /><br />
+                        <%= link_to 'Brainstorm sans image', root_path(home: 'brain_no_img') %><br /><br />
+                        <%= link_to 'Home courte', root_path(home: 'shorter') %><br /><br />
+                        <%= link_to 'Home nna', root_path(home: 'nna') %><br /><br />
+                        <%= link_to 'Home originale', root_path(home: 'original') %>
+                    </div>
+                </div>
+            </div>
+            <div class="cell ratio1"></div>
+        </div>
+    </div>
+</section>

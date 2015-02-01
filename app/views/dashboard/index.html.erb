@@ -1,0 +1,53 @@
+<section class="dashboard">
+	<article class="box">
+		<header class="box-hd">
+            <h1 class="h2"><%= t '.title' %></h1>
+            <%= render 'announcement' %>
+            <h2><%= t '.start.title' %></h2>
+        </header>
+        <div class="box-bd">
+            <div class="grid">
+                <% if advanced_mode? %>
+                    <div class="row">
+                        <div class="cell cTxt">
+                            <%= link_to '', content_types_path, data: {icon: raw("&#xe016;")}, class: 'bullet' %>
+                        </div>
+                        <div class="cell ratio1">
+                            <h3><%= t '.start.format_title' %></h3>
+                            <p><%= t '.start.format_text' %></p>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="row">
+                    <div class="cell cTxt">
+                        <%= link_to '', contents_path, data: {icon: raw("&#xe014;")}, class: 'bullet' %>
+                    </div>
+                    <div class="cell ratio1">
+                        <h3><%= t_advanced '.start.content_title' %></h3>
+                        <p><%= t_advanced '.start.content_text' %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell cTxt">
+                        <%= link_to '', channels_path, data: {icon: raw("&#xe010;")}, class: 'bullet' %>
+                    </div>
+                    <div class="cell ratio1">
+                        <h3><%= t_advanced '.start.channel_title' %></h3>
+                        <p><%= t_advanced '.start.channel_text' %></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell ratio2">
+                        <h2><%= t '.invite.title' %></h2>
+                        <%= form_tag invitations_path do %>
+                            <%= email_field_tag :email, nil, required: true, placeholder: t('.invite.email') %>
+                            <%= submit_tag t('.invite.submit') %>
+                        <% end %>
+                    </div>
+                    <div class="cell ratio2">
+                    </div>
+                </div>
+            </div>
+        </div>
+	</article>
+</section>

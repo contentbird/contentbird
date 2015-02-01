@@ -1,0 +1,16 @@
+test:
+  activerecord:
+    models:
+      cb/core/section: "section"
+    attributes:
+      cb/core/section:
+        slug: "slug"
+        title: 'title'
+        content_type_id: 'content_type_id'
+        mode: 'mode'
+        created_at: 'created_at'
+        updated_at: 'updated_at'
+        forewords: 'forewords'
+  section_modes:
+    display: display
+    form: form

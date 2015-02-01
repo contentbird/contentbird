@@ -1,0 +1,14 @@
+<div class="box">
+	<div class="box-hd">
+		<h2 id="forms">Forms</h2>
+	</div>
+	<div class="box-bd">
+		<%= select_tag "select tag", options_for_select([ "Value1", "Value2" ], "Value1") %>
+		<%= select_tag "select tag", options_for_select([ "Value1", "Value2" ], "Value1"), class: 'fancy' %>
+		<%= text_field_tag("text field tag", nil, placeholder: 'Add a text') %>
+		<%= text_field_tag("email field tag", nil, "type" => "email", placeholder: 'Add a email') %>
+		<%= label_tag("label text area", nil ) %>
+		<%= text_area_tag("text area", nil) %>
+	</div>
+</div>
+<%= search_field_tag("search", nil, placeholder: 'Search') %>

@@ -1,0 +1,14 @@
+<section class="channels">
+	<h1 class="h2"><%= t '.title', channel: @channel.name %></h1>
+	<div class="box">
+		<div class="box-bd">
+			<%= channel_edit_link @channel, class: 'rFloat' %>
+			<p>
+				<%= t '.url_label' %>
+				<%= link_to @channel.web_url, 'http://'+@channel.web_url, target: '_blank' %>
+			</p>
+			<%= render 'last_publication' %>
+		</div>
+	</div>
+	<%= render 'publications', publications: @publications %>
+</section>

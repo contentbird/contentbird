@@ -1,0 +1,20 @@
+<% content_for :load_script do %>
+    cb.togglePublications();
+    cb.triggerPublications();
+    cb.decorateMenuButtons();
+    cb.decorateMobileButtons();
+<% end %>
+
+<section class="contents">
+    <h1 class="h2"><%= t '.title' %></h1>
+    <section class="actions">
+        <%= render partial: 'create_content_button', locals: {types: @types, current_type: @type} %>
+        <%= render partial: 'content_filter',        locals: {types: @types, current_type: @type} %>
+        <%= link_to '', params.merge!(display_mode: 'grid', page: 1), data: {icon: raw("&#xe604;")}, class: "switch-view #{@display_mode=='grid' ? ' active' : ''}" %>
+        <%= link_to '', params.merge!(display_mode: 'cards', page: 1), data: {icon: raw("&#xe603;")}, class: "switch-view #{@display_mode=='cards' ? ' active' : ''}" %>
+    </section>
+    <div id="content_list">
+        <%= render "contents_#{@display_mode}" %>
+        <%= paginate @contents %>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+fr:
+  contents:
+    shared:
+      confirm: 'Le contenu et toutes ces publications seront définitivement supprimés. Etes-vous sûr ?'
+      hide_publications: 'Masquer les publications'
+    content_filter:
+      all_formats: Tous formats
+      search: Chercher
+    create_content_button:
+      create: Créer un
+      create_other: ou bien alors...
+      tip: 'Tip: pour partager une vidéo Youtube, Dailymotion ou Vimeo, ou de la musique sur Soundcloud, Spotify ou Deezer, créez un'
+    index:
+      title: 'Mes contenus'
+    contents_cards:
+      publications: 'publications...'
+    form:
+      add_title: Ajouter un titre
+      submit_create: Créer ce contenu
+    edit:
+      title: Editer le contenu
+    new:
+      title: Nouveau contenu
+      new_title: "Nouveau %{title}"
+    show:
+      title: Votre contenu
+      published_on: 'Publié sur <span id="pub_count_%{id}">%{count}</span> canaux'
+    fields:
+      url:
+        placeholder: 'Collez ici votre url. Nous afficherons les players pour Youtube, Soundcloud, Dailymotion, Spotify, Vimeo et Deezer'

@@ -1,0 +1,16 @@
+fr:
+  activerecord:
+    models:
+      cb/core/section: "rubrique"
+    attributes:
+      cb/core/section:
+        slug: "Nom d'url"
+        title: 'Titre'
+        content_type_id: 'Format'
+        mode: 'Affichage'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        forewords: 'Introduction'
+  section_modes:
+    display: Liste
+    form: Formulaire

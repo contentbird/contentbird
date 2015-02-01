@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    models:
+      cb/core/content: 'contenu'
+    attributes:
+      cb/core/content:
+        title: Titre
+        owner_id: Propriétaire
+        content_type_id: Format
+        properties: propriétés
+        created_at: créé le
+        updated_at: mis à jour le
+        slug: "Nom d'Url"
+        publications_count: Nombre de publications

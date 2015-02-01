@@ -1,0 +1,42 @@
+<fieldset class="_channelSection _withOptions _sortItem" id="section_<%=f.object.slug%>">
+    <div class="row with-sub-row">
+        <div class="cell">
+            <div class="_dragHandle" data-icon="&#xe000;"></div>
+        </div>
+        <div class="cell ratio1">
+            <div class="cell-content">
+                <%= f.label :content_type_id %>
+                <div class="cell-fill">
+                    <%= f.collection_select(:content_type_id, @user_types, :id, :title, {prompt: true}, {class: '_typeSelect', required: true}) %>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="cell-content">
+                <%= f.label :mode %>
+                <div class="cell-fill">
+                    <%= f.select :mode, [[t('section_modes.display'), 'display'], [t('section_modes.form'), 'form']] %>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <a href="#" class="butn optionsHide" data-icon="&#xe015;"><%= t 'defaults.hide_options' %></a>
+            <a href="#" class="butn optionsShow" data-icon="&#xe00d;"><%= t 'defaults.show_options' %></a>
+            <%= f.hidden_field :position, class: "_dragIndex" %>
+        </div>
+        <div class="cell">
+            <%= f.hidden_field :_destroy, class: '_destroyRecord' %>
+            <%= link_to '', '#', class: "_removeFields butn-no-text", data: {icon: raw("&#xe00b;")} %>
+        </div>
+    </div>
+    <div class="optionsPanel sub-row">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: '_typeName' %>
+
+        <%= f.label :slug %>
+        <%= f.text_field :slug, disabled: true %>
+
+        <%= f.label :forewords %>
+        <%= f.text_area :forewords %>
+    </div>
+</fieldset>

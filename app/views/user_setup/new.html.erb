@@ -1,0 +1,71 @@
+<h1 class="h2 cTxt"><%= t '.welcome', nest_name: current_user.nest_name %></h1>
+<div class="box">
+	<div class="box-bd">
+		<div class="row">
+			<% if advanced_mode? %>
+				<div class="cell ratio1">
+					<%= t '.offered_website' %>
+				    <div class="grid-no-border">
+				    	<div class="row">
+				    		<div class="cell ratio1 cTxt">
+				            	<%= image_tag 'social/contentbird.svg', class: 'social-img' %>
+				        		<div data-icon="&#xe605;" class="check" id="websiteUrl"><%= @website_channel.web_url %></div>
+				            </div>
+				        </div>
+				    </div>
+				</div>
+				<div class="cell-b"></div>
+			<% end %>
+			<div class="cell ratio2 cTxt">
+				<p><%= t '.add_social_networks' %></p>
+				<%= form_tag '', {action: :post} do |f| %>
+				    <div class="grid-no-border">
+				    	<div class="row">
+				    		<div class="cell ratio1 cTxt">
+					    		<% if @social_channels_summary['twitter'] %>
+					    			<%= image_tag 'social/twitter.svg', class: 'social-img', id: 'addedTwitterImg' %>
+					            	<div data-icon="&#xe605;" class="check"><%= t '.good_job' %></div>
+					    		<% else %>
+					            	<%= image_submit_tag 'social/twitter.svg', {formaction: "/auth/twitter", class: 'social-img', id: 'addTwitterBtn'} %>
+					            <% end %>
+					        </div>
+				            <div class="cell ratio1 cTxt">
+					    		<% if @social_channels_summary['facebook'] %>
+					    			<%= image_tag 'social/facebook.svg', class: 'social-img', id: 'addedFacebookBtn' %>
+					            	<div data-icon="&#xe605;" class="check"><%= t '.good_job' %></div>
+					    		<% else %>
+					            	<%= image_submit_tag 'social/facebook.svg', {formaction: "/auth/facebook", class: 'social-img', id: 'addFacebookBtn'} %>
+					            <% end %>
+					        </div>
+					        <div class="cell ratio1 cTxt">
+					    		<% if @social_channels_summary['linkedin'] %>
+					    			<%= image_tag 'social/linkedin.svg', class: 'social-img', id: 'addedLinkedinBtn' %>
+					            	<div data-icon="&#xe605;" class="check"><%= t '.good_job' %></div>
+					    		<% else %>
+					            	<%= image_submit_tag 'social/linkedin.svg', {formaction: "/auth/linkedin", class: 'social-img', id: 'addLinkedinBtn'} %>
+					            <% end %>
+					        </div>
+				        </div>
+				        <div class="row">
+				    		<div class="cell ratio1">
+				    			<p class="info">
+				    				<%= raw t('.note') %><br />
+				    				<strong><%= raw t('.note_safe') %></strong>
+				    			</p>
+				    		</div>
+				    	</div>
+				    	<div class="row">
+				    		<div class="cell ratio1">
+				    			<%= link_to t('.imdone'), contents_path(unfold_create_btn: true) , class: 'butn action rFloat', id: 'doneBtn' %>
+				    		</div>
+				    	</div>
+				    </div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+

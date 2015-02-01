@@ -1,0 +1,73 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+<% end %>
+<div class="header-img" id="homeImage">
+    <div class="header-content">
+        <div class="box transparent" style="background: rgba(54, 25, 25, .5)">
+            <div class="box-hd">
+                <h1>
+                    Vous pouvez enfin partager <br /> les données qui comptent.
+                    <!-- Gardez vos données, partagez-les -->
+                    <!-- Gardez la main sur vos données -->
+                    <!-- Votre contenu, vos règles -->
+
+                </h1>
+            </div>
+            <div class="box-bd cTxt">
+                <% unless user_signed_in? %>
+                    <%= link_to 'Reprennez le contrôle de vos données', new_user_registration_path, class: 'butn action push signUp' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<section>
+    <div class="highlight narrow" style="padding: 3rem ">
+        <h1 class="cTxt ">
+            Prêtez un lien, le contenu reste à vous.
+        </h1>
+
+        <% unless user_signed_in? %>
+            <div class="cTxt">
+                <%= link_to ('Essayez ContentBird'), new_user_registration_path, class: 'butn action background' %>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="features narrow">
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe612;"></div>
+                    <h2 class="cTxt">En lieu sûr</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Pas de pub. Pas d'utilisation de vos données.
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe614;"></div>
+                    <h2 class="cTxt">Droit à l’oubli</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Partagez sur le web et les médias sociaux. Retirez : plus de trace.
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe611;"></div>
+                    <h2 class="cTxt">Ouvert</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    (Ré)utilisez vos données dans vos projets: Mobile, DIY, Open Data...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

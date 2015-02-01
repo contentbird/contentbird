@@ -1,0 +1,15 @@
+<section class="channels">
+	<h1 class="h2"><%= t '.title', channel: @channel.name %></h1>
+    <div class="box">
+        <div class="box-bd">
+            <%= channel_edit_link @channel, class: 'rFloat' %>
+            <%= form_tag "#{HTTPS_URL}#{select_api_explorer_path}", target: '_blank' do %>
+                <%= hidden_field_tag 'api_key', @channel.id %>
+                <%= hidden_field_tag 'api_secret', @channel.access_token %>
+                <%= button_tag t('.try_api'), class: 'butn' %>
+            <% end %>
+            <%= render 'last_publication' %>
+        </div>
+    </div>
+    <%= render 'publications', publications: @publications %>
+</section>

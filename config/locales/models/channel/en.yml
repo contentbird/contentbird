@@ -1,0 +1,79 @@
+en:
+  activerecord:
+    models:
+      cb/core/channel: 'channel'
+      cb/core/website_channel: 'web channel'
+      cb/core/social_channel: 'social channel'
+      cb/core/api_channel: 'API channel'
+      cb/core/messaging_channel: 'email channel'
+    attributes:
+      cb/core/channel:
+        id: API Key
+        name: 'Name'
+        closed_at: 'Closed at'
+        url_prefix: "Url prefix"
+        access_token: 'API secret'
+        type: 'Type'
+        provider: 'Provider'
+        css: 'Stylesheet (css)'
+        baseline: 'Site baseline'
+        cover: 'Background image'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        allow_social_feed: 'Display social feed'
+      cb/core/website_channel:
+        id: API Key
+        name: 'Name'
+        closed_at: 'Closed at'
+        url_prefix: "Url prefix"
+        access_token: 'API secret'
+        type: 'Type'
+        provider: 'Provider'
+        css: 'Stylesheet (css)'
+        baseline: 'Site baseline'
+        cover: 'Background image'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        allow_social_feed: 'Display social feed'
+      cb/core/social_channel:
+        id: API Key
+        name: 'Name'
+        closed_at: 'Closed at'
+        url_prefix: "Url prefix"
+        access_token: 'API secret'
+        type: 'Type'
+        provider: 'Provider'
+        css: 'Stylesheet (css)'
+        baseline: 'Site baseline'
+        cover: 'Background image'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        allow_social_feed: 'Display social feed'
+      cb/core/api_channel:
+        id: API Key
+        name: 'Name'
+        closed_at: 'Closed at'
+        url_prefix: "Url prefix"
+        access_token: 'API secret'
+        type: 'Type'
+        provider: 'Provider'
+        css: 'Stylesheet (css)'
+        baseline: 'Site baseline'
+        cover: 'Background image'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        allow_social_feed: 'Display social feed'
+      cb/core/messaging_channel:
+        id: API Key
+        name: 'Name'
+        closed_at: 'Closed at'
+        url_prefix: "Url prefix"
+        access_token: 'API secret'
+        type: 'Type'
+        provider: 'Provider'
+        css: 'Stylesheet (css)'
+        baseline: 'Site baseline'
+        cover: 'Background image'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        allow_social_feed: 'Display social feed'

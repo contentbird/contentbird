@@ -1,0 +1,10 @@
+en:
+  api_explorers:
+    methods:
+      home_contents: List publications in the first section
+      section_contents: List publications in a given section
+      section_content: Get a publication within a section
+      new_section_content: New content in a section
+      create_section_content: Create a content in a section
+      contents: List all publications for the channel
+      content: Get a publication

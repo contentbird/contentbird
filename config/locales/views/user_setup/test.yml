@@ -1,0 +1,10 @@
+test:
+  user_setup:
+    new:
+      welcome: 'Welcome to Contentbird, %{nest_name} !'
+      offered_website: 'We offer you a website to share your data :'
+      add_social_networks: 'Start by adding your social networks :'
+      good_job: Good job
+      note: 'Note: To publish on a social channel, you must authorize ContentBird to publish in your name. By clicking on the provider logo you will be redirected to your provider to grant contentbird this authorization.'
+      note_safe: We will never post anything on your behalf without an explicit action from you.
+      imdone: I'm done

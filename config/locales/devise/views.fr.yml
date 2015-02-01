@@ -1,0 +1,60 @@
+fr:
+  devise:
+    common:
+      sign_in: "Se connecter"
+      sign_up: "S'enregistrer"
+    shared:
+      links:
+        have_account: Vous avez déjà un compte ContentBird
+        forgot_password?: "Mot de passe oublié?"
+        missing_confirmation?: "Vous n'avez pas reçu de courriel de confirmation ?"
+        missing_unlock?: "Vous n'avez pas reçu de courriel de déverrouillage de votre compte ?"
+    confirmations:
+      new:
+        title: Renvoyer le courriel de confirmation
+        submit: Renvoyer le courriel de confirmation
+    mailer:
+      confirmation_instructions:
+        # welcome: "Bienvenu(e)"
+        instructions: "Vous pouvez confirmer votre compte en cliquant sur le lien ci-dessous"
+        confirm: 'Confirmer mon compte'
+      reset_password_instructions:
+        instructions: "Un changement de mot de passe a été demandé. Vous pouvez le faire en cliquant sur le lien ci-dessous."
+        change: "Changer mon mot de passe"
+        wrong: "Si vous n'avez pas demandé ce changement, ignorez ce message."
+        unchange: "Votre mot de passe ne sera pas changé tant que vous n'aurez pas accédé au lien ci-dessus pour en créer un nouveau."
+      unlock_instructions:
+        # For "Your account has been locked due to an excessive amount of unsuccessful sign in attempts."
+        # locked_account_message: "Votre compte a été verrouillé à la suite d'un trop grand nombre de tentatives d'authentification."
+        # For "Click the link below to unlock your account"
+        # unlock_account_instruction: "Cliquez sur le lien ci-dessous pour déverrouiller votre compte"
+        # unlock_my_account: "Déverrouiller mon compte"
+    passwords:
+      new:
+        title: Mot de passe oublié ?
+        submit: Envoyez-moi les instructions pour changer de mot de passe
+      edit:
+        title: Changer votre mot de passe
+        new_password: Nouveau mot de passe
+        submit: Changer le mot de passe
+    registrations:
+      new:
+        title: Inscription gratuite
+        submit: Créer mon compte
+      edit:
+        title: Editer mon profil
+        waiting_confirmation: "En attente de confirmation de la part de %{email}"
+        auto: Automatique (recommandé)&nbsp;&nbsp;&nbsp;&nbsp;
+        password_instruction: Mot de passe <i>(Laisser vide si vous ne voulez pas le changer)</i>
+        current_password_instruction: "Vous devez saisir votre mot de passe courant pour confirmer vos changements"
+        submit: Mettre à jour mon profil
+        unhappy?: "Pas content(e) ?"
+        cancel_my_account: "Annuler mon compte"
+    sessions:
+      new:
+        title: Connectez-vous
+        remember_me: Rester connecté
+    unlocks:
+      new:
+        title: Renvoyer le mail pour déverrouiller mon compte
+        submit: Renvoyer le mail pour déverrouiller mon compte

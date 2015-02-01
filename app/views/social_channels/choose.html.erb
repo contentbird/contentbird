@@ -1,0 +1,29 @@
+<section class="channels">
+    <h1 class="h2"><%=  t '.title' %></h1>
+    <article class="box">
+        <header class="box-hd">
+
+        </header>
+        <div class="box-bd">
+            <%= form_tag '', {action: :post} do |f| %>
+                <%= label_tag t('.choose_provider') %>
+                &nbsp;
+                <div>
+                    <%= (image_submit_tag 'social/developer.svg', id: 'dev_provider', formaction: "/auth/developer", class: 'social-img') unless Rails.env.production? %>
+                    <%= image_submit_tag 'social/twitter.svg', id: 'twitter_provider', formaction: "/auth/twitter", class: 'social-img' %>
+                    <%= image_submit_tag 'social/linkedin.svg', id: 'linkedin_provider', formaction: "/auth/linkedin", class: 'social-img' %>
+                    <%= image_submit_tag 'social/facebook.svg', id: 'facebook_provider', formaction: "/auth/facebook", class: 'social-img' %>
+                    <%# image_submit_tag 'social/googleplus.png', {formaction: "/auth/googleplus"} %>
+                    <%= link_to image_tag('messaging/email.svg', id: 'email_provider', class: 'social-img'), new_messaging_channel_path(provider: 'email') %>
+
+                </div>
+                <p>
+                    <%= t '.note' %>
+                </p>
+                <p>
+                    <strong><%= t '.note_safe' %></strong>
+                </p>
+            <% end %>
+        </div>
+    </article>
+</section>

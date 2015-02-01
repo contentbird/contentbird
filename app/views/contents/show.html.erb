@@ -1,0 +1,36 @@
+<% content_for :load_script do %>
+    cb.displayPublicationZone('<%= publications_path(content_id: @content.id) %>', $('#publications_for_<%=@content.id%>'));
+    cb.triggerPublications();
+    cb.colorizeCode();
+    cb.decorateGalleries();
+    cb.decorateUrls();
+    cb.decorateMarkdownLinks();
+<% end %>
+
+<section class="contents">
+    <h1 class="h2"><%= t '.title' %></h1>
+    <section class="box publications">
+        <h3>
+            <%= raw t('.published_on', id: @content.id, count: @content.publications_count) %>
+        </h3>
+        <div id="publications_for_<%=@content.id%>"></div>
+    </section>
+
+    <article class="box content">
+        <header class="box-hd">
+            <%= link_to @type.title, contents_path(content_type_id: @type.id) %>
+            <%= link_to '', content_path(@content.id), method: :delete, data: {icon: raw("&#xe00b;"), confirm: t('contents.shared.confirm')}, class: "remove rFloat" %>
+            <%= link_to '', edit_content_path(@content.id), class: 'rFloat', data: {icon: raw("&#xe00c;"), no_turbolink: true} %>
+        </header>
+        <div class="box-bd">
+            <h1 id="content_title"><%= @content.title %></h1>
+            <% @content.exportable_properties.each do |prop_name, property| %>
+                <%= display_content_property prop_name, property %>
+            <% end %>
+        </div>
+        <footer class="box-ft">
+        </footer>
+    </article>
+</section>
+
+<%= render 'cb-render/js_templates' %>

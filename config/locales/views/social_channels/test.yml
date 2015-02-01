@@ -1,0 +1,23 @@
+test:
+  social_channels:
+    form:
+      allow_social_feed: Allow social feed
+      privacy_warning: 'Privacy warning: displaying the social feed will allow anyone to browse through your publications on this channel'
+    choose:
+      title: New social channel
+      choose_provider: 'Choose your provider:'
+      note: 'Note: To publish on a social channel, you must authorize ContentBird to publish in your name. By clicking on the provider logo you will be redirected to your provider to grant contentbird this authorization.'
+      note_safe: We will never post anything on your behalf without an explicit action from you.
+    edit:
+      title: "Edit %{provider} channel"
+    new:
+      title: "New %{provider} channel"
+    show:
+      title: 'Channel %{channel} (%{provider})'
+      url_label: 'Url :'
+      check_connection: 'Check the connection to %{provider}'
+    check_credentials:
+      valid: 'Your connection is OK'
+      broken: "We could not make the connection work."
+      retry: 'please retry'
+      authorize_again: 'allow ContentBird to reconnect'

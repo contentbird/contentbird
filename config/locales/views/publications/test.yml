@@ -1,0 +1,14 @@
+test:
+  publications:
+    publications:
+      no_channel: 'To share your content, you must first <a href="%{url}">create a channel</a>.'
+    show_expiration:
+      expire_in: 'Unpublish in %{expire_at}'
+      cancel: Cancel
+      postpone: "or postpone for :"
+      nolimit: No end date
+      unpublish: "Automatically unpublish in :"
+      limit:
+        day: 1 day
+        week: 1 week
+        month: 1 month

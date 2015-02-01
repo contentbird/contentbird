@@ -1,0 +1,122 @@
+<section class="box">
+    <header class="box-hd">
+        <h2>Choose your channel and api call</h2>
+    </header>
+    <div class="box-bd">
+        <%= form_tag select_api_explorer_path do %>
+            <div class="row">
+                <div class="cell ratio1">
+                    <div class="cell-content">
+                        <%= label_tag 'api_key', 'Channel API Key :' %>
+                        <div class="cell-fill">
+                            <%= text_field_tag 'api_key', @api_key %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cell ratio1">
+                    <div class="cell-content">
+                        <%= label_tag 'api_secret', 'Channel API Secret :' %>
+                        <div class="cell-fill">
+                            <%= text_field_tag 'api_secret', @api_secret %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cell ratio1">
+                    <div class="cell-content">
+                        <%= label_tag 'api_actions', 'Choose your API call :' %>
+                        <div class="cell-fill">
+                            <%= select_tag 'current_action', options_for_select(@api_actions, @current_action) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="cell ratio1">
+                    <div class="cell-content">
+                        <%= label_tag 'api_locale', 'Choose your locale :' %>
+                        <div class="cell-fill">
+                            <%= select_tag 'api_locale', options_for_select([ "en", "fr" ], @api_locale) %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <%= submit_tag 'select' %>
+        <% end %>
+    </div>
+</section>
+<% if @current_action %>
+    <section class="box">
+        <header class="box-hd">
+            <h2>Set your api call params</h2>
+        </header>
+        <div class="box-bd">
+            <%= form_tag run_api_explorer_path do %>
+                <%= hidden_field_tag 'api_key', @api_key %>
+                <%= hidden_field_tag 'api_secret', @api_secret %>
+                <%= hidden_field_tag 'api_locale', @api_locale %>
+                <%= hidden_field_tag 'current_action', @current_action %>
+                <% @current_action_params.each do |param| %>
+                    <% action_name = param[1].to_s %>
+                    <% field_name  = "api_params[#{action_name}]" %>
+                    <div class="row">
+                        <div class="cell ratio1">
+                            <div class="cell-content">
+                                <%= label_tag field_name, action_name %>
+                                <div class="cell-fill">
+                                    <% if    action_name.last(5) == '_slug' %>
+                                        <%= text_field_tag field_name, params[:api_params].try(:[], action_name.to_sym), required: (param[0] == :req) %>
+                                    <% elsif action_name.last(7) == '_params' %>
+                                        <%= text_area_tag field_name, params[:api_params].try(:[], action_name.to_sym), required: (param[0] == :req) %>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <div class="cell-content">
+                            <%= label_tag 'api_context', 'Context' %>
+                            <div class="cell-fill">
+                                <%= text_field_tag 'api_context', params[:api_context], placeholder: 'sections, channel, html separated by |' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <div class="cell-content">
+                            <%= label_tag 'api_page', 'Pagination' %>
+                            <div class="cell-fill">
+                                <%= text_field_tag 'api_page', params[:api_page], placeholder: 'Page number'    %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%= submit_tag 'Call API' %>
+            <% end %>
+        </div>
+    </section>
+<% end %>
+
+<% if @api_response %>
+    <section class="box">
+        <header class="box-hd">
+            <h2>Curl command and response</h2>
+        </header>
+        <div class="box-bd">
+            Curl command : <br />
+            <pre><%= @api_curl %></pre>
+            Response body : <br />
+            <pre><%= @api_response %></pre>
+        </div>
+    </section>
+<% end %>

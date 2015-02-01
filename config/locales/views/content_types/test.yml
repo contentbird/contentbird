@@ -1,0 +1,16 @@
+test:
+  content_types:
+    form:
+      title: Give it a name
+      title_label: 'All formats already include a title field, no need to create one yourself, but you can choose its label:'
+      add_property: Add property
+    edit:
+      title: Edit format
+      confirm: "Are sure ? It will destroy all your %{content_type} contents"
+    index:
+      title: My formats
+      new: New format
+    new:
+      title: New format
+      cancel: cancel
+      fork: "You want to change a shared format, so we made your own copy of the original. You can now modify it as you will, or <a href=\"%{cancel_url}\">%{cancel_text}</a>."

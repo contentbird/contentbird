@@ -1,0 +1,26 @@
+<%= render "shared/error_messages", target: @type %>
+
+<%= f.text_field :title, autofocus: true, required: true, placeholder: t('.title'), class: 'formTitle'  %>
+
+<%= t '.title_label' %>
+<div class="row">
+    <div class="cell">
+        <div class="cell-content">
+            <%= f.label :title_label %>
+            <div class="cell-fill">
+                <%= f.text_field :title_label %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sortable" id="propertiesZone">
+    <%= f.fields_for :properties do |builder| %>
+        <%= render 'property_fields', f: builder %>
+    <% end %>
+</div>
+
+<%= link_to_add_fields t('.add_property'), f, :properties, add_zone: 'propertiesZone' %>
+
+<%= f.submit %>
+<%= link_to t('actions.cancel'), content_types_path, class: 'butn' %>

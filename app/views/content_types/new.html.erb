@@ -1,0 +1,17 @@
+<section class="contents-types">
+	<h1 class="h2"><%= t '.title' %></h1>
+	<div class="box">
+        <% if @forked_type %>
+            <div class="box-hd">
+                <div class="info">
+                    <%= raw t('.fork', cancel_url: content_types_path, cancel_text: t('.cancel'))%>
+                </div>
+            </div>
+        <% end %>
+		<div class="box-bd">
+			<%= form_for @type, as: :content_type, url: {action: :create} do |f| %>
+		    	<%= render 'form', f: f %>
+			<% end %>
+		</div>
+	</div>
+</section>

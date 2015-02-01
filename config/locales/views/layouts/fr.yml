@@ -1,0 +1,51 @@
+fr:
+  layouts:
+    application:
+      title: ContentBird
+      main_nav:
+        formats: Formats
+        contents: Contenus
+        channels: Canaux
+      account_nav:
+        my_account: Mon compte
+        my_profile: Mon profil
+        logout: Me déconnecter
+      feedback:
+        question: 'une question ?'
+        alt: "une question, un retour d'expérience sur ContentBird ?"
+      about: A propos
+      privacy: Vie privée
+      terms: Conditions d'utilisation
+      website: www.contentbird.com
+    full_page:
+      title: ContentBird
+    home:
+      title: ContentBird
+      meta:
+        og_title: ContentBird
+        og_description: "Vous n'avez jamais été aussi libre de contrôler vos données"
+        description: "ContentBird est un service de partage de données sur les réseaux sociaux qui respecte votre vie privée."
+        keywords: "vie privée, données personnelles, réseaux sociaux, partage, contenu, album photo, droit à l'oubli, effacer mes traces"
+      welcome_back: "Bienvenue %{name} ! "
+      contact: Contactez-nous
+      about: A propos
+      privacy: Vie privée
+      terms: Conditions d'utilisation
+      sign_in: Se connecter
+      sign_up: S'inscrire
+      to_dashboard: Mon espace privé
+    public:
+      title: ContentBird
+      meta:
+        og_title: ContentBird
+        og_description: "Vous n'avez jamais été aussi libre de contrôler vos données"
+        description: "ContentBird est un service de partage de données sur les réseaux sociaux qui respecte votre vie privée."
+        keywords: "vie privée, données personnelles, réseaux sociaux, partage, contenu, album photo, droit à l'oubli, effacer mes traces"
+      welcome_back: "Bienvenue %{name} ! "
+      contact: Contactez-nous
+      about: A propos
+      privacy: Vie privée
+      terms: Conditions d'utilisation
+      sign_in: Se connecter
+      sign_up: S'inscrire
+      to_dashboard: Mon espace privé

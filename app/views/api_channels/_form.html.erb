@@ -1,0 +1,30 @@
+<%= render "shared/channels/header", f: f %>
+
+<% unless @channel.new_record? %>
+    <div>
+        <%= f.label :id %>
+        <%= f.text_field :id, disabled: true %>
+    </div>
+    <div class="row">
+        <div class="cell ratio2">
+            <div class="cell-content">
+                <%= f.label :access_token %>
+                <div class="cell-fill">
+                    <%= f.text_field :access_token, disabled: true %>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <%= link_to t('.generate_token'),
+                        reset_access_token_channel_path(@channel),
+                        remote: true,
+                        confirm: t('.confirm'),
+                        data: {icon: raw("&#xe014;")}  %>
+        </div>
+    </div>
+<% end %>
+
+<%= render "shared/channels/sections", f: f %>
+
+<%= f.submit %>
+<%= link_to t('actions.cancel'), channels_path, class: 'butn' %>

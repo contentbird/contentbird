@@ -1,0 +1,31 @@
+fr:
+  home:
+    index:
+      tagline: Vous n'avez jamais été aussi libre <span class="break"/>de contrôler vos données.
+      subscription: "Renouez avec la vie privée"
+      hiw:
+        link: En savoir plus
+        title: Comment cela fonctionne ?
+        step1:
+          title: Créer vos canaux sociaux
+          body: "Connectez ContentBird à Facebook, LinkedIn et Twitter. Nous ne postons rien sans votre demande, et nous n'utilisons pas votre réseau d'amis."
+        step2:
+          title: Créer et partager vos contenus
+          body: "Partagez sélectivement vos Albums photos, posts, liens vidéos ou musiques. Votre contenu reste sur votre ContentBird : vous ne diffusez qu'un lien sur les médias sociaux."
+        step3:
+          title: Gérez votre vie privée
+          body: "Retrouvez facilement tous vos contenus et sachez sur quels canaux ils sont publiés. D'un simple click, supprimez vos publications sur les réseaux sociaux : le lien vers votre contenu est désactivé."
+        replay: Rejouer
+      highlight:
+        title: Libérez vos données des services qui les utilisent.
+        link: 'Essayez ContentBird'
+      assets:
+        asset1:
+          title: Arrêter d'être le produit
+          body: Vos données restent à vous. Nous ne les utiliserons jamais y compris pour vous afficher de la publicité.
+        asset2:
+          title: Effacer vos données
+          body: Vous avez le droit de vous tromper, de retirer un propos ou d'effacer les données qui vous concernent. ContentBird vous donne enfin le droit à l'oubli.
+        asset3:
+          title: Utiliser vos réseaux
+          body: Vous partagez vos données sur vos réseaux sociaux existants. Plus besoin de créer de faux comptes pour avoir une vie privée.

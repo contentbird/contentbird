@@ -1,0 +1,56 @@
+<section>
+    <article class="box narrow">
+        <header class="box-hd">
+            <h1>Données personelles et vie privée</h1>
+        </header>
+        <p>Ce sujet est très important pour nous, aussi nous avons essayé de rester clairs et directs. le document est un peu long, mais demeure, nous l'espérons, lisible.</p>
+
+        <h2>Données personnelles</h2>
+
+        <p>Nous vous demandons uniquement votre email et un mot de passe. Ces 2 informations ne sont diffusées à personne : pas aux autres utilisateurs, et encore moins à un tiers. Nous ne stockons pas votre mot de passe en clair: il est crypté et salé.</p>
+
+        <h2>Vos contenus</h2>
+
+        <p>Les contenus que vous créez sur ContentBird ne sont diffusés que lorsque vous les publiez. Ils sont stockés dans notre base de données, hébergées chez Heroku en Europe (Dublin). En dehors de vos publications, nous ne diffusons pas ces données aux autres utilisateurs ou à un tiers.</p>
+
+        <p>Les médias (images, galleries...) sont stockées sur Amazon S3 Europe (Dublin), et les chemins d'accès à ces ressources sont obfusquées de sorte qu'il est très improbable que quiconque y accède autrement qu'en consultant une de vos publications.</p>
+
+        <h2>Dépublication</h2>
+
+        <p>Lorsque vous dépubliez un contenu, il cesse immédiatement d'être disponible sur ContentBird. S'il s'agit d'une publication sur un média social tiers, nous utilisons leur API pour dépublier votre post. Toutefois, même si ce média social conserve votre post sans le dire, il ne dispose que d'un titre et d'un lien qui ne fonctionne plus.</p>
+
+        <h2>Suppression de données</h2>
+
+        <p>Lorsque vous supprimez un contenu de ContentBird, il est physiquement détruit. Nous ne conservons rien. La suppression est immédiate dans notre base de données, et les médias associés sont supprimés sur AWS S3 quelques secondes/minutes plus tard.</p>
+
+        <p>Si vous vous désinscrivez, nous supprimons toute trace de vous sur nos serveurs : données en base, et fichiers. La encore c'est irréversible, mais cela garantit que vous maîtrisez vos données jusqu'au bout.</p>
+
+        <h2>Cookies</h2>
+
+        <p>Nous utilisons un cookie de session, qui ne contient aucune information personnelle. Sa seule utilité est de conserver votre authentification tout au long de votre visite. Si vous refusez ce cookie, vous ne pourrez pas utiliser notre service. Toutefois, vous pouvez librement le détruire après chaque visite, cela n'a aucun effet négatif sur votre utilisation de ContentBird.</p>
+
+        <p>Si vous utilisez la fonction "remember me" lors de votre authentification, nous plaçons un 2ème cookie de plus longue durée qui vous évite de vous authentifier à chaque utilisation du site. Ce deuxième cookie est facultatif.</p>
+
+        <h2>Logs et supervision</h2>
+
+        <p>Les logs de notre application sur Heroku nous servent à diagnostiquer d'éventuels problèmes. Nous ne les téléchargeons pas : nous les utilisons en temps réel.</p>
+
+        <p>Nous utilisons New Relic pour mesurer la qualité de service et les temps de réponse de ContentBird. Nous ne donnons à NewRelic aucune donnée personnelle. NewRelic place un petit script en bas de nos pages, ce qui nous permet de mesurer la rapidité de chargement de ContentBird dans votre navigateur et de connaitre la répartition des navigateurs que nos utiliateurs utilisent, dans le but d'améliorer notre service.</p>
+
+        <h2>Statistiques d'utilisation</h2>
+
+        <p>Nous utilisons le logiciel opensource Piwik pour connaitre statistiquement l'utilisation que vous faites de ContentBird. Nous avons choisi cette solution plutôt que Google Analytics pour ne pas donner vos statistiques d'utilisation à Google.</p>
+
+        <p>Ce processus est anonyme. Nous ne stockons dans Piwik aucune de vos données personnelles.</p>
+
+        <p>Toutefois, si cette collecte d'information vous gêne, vous pouvez utiliser le formulaire ci-dessous pour être exclus de la collecte d'information de Piwik.</p>
+
+        <%= render 'home/privacy/piwik_iframe' %>
+
+        <p>Cela placera un cookie sur votre poste qui permettra à Piwik de vous ignorer à l'avenir. Si vous pensez avoir perdu ce cookie, vous pouvez toujours revenir sur cette page et décocher la case de nouveau.</p>
+
+        <p>Voila, nous espérons avoir répondu à vos questions relatives aux données personnelles. Si une information vous manque sur cette page, n'hésitez pas à nous contacter sur <a href="mailto:contact@contentbird.com">contact@contentbird.com</a>.</p>
+
+        <p>L'équipe ContentBird</p>
+    </article>
+</section>

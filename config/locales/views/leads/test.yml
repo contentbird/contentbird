@@ -1,0 +1,7 @@
+test:
+  leads:
+    new:
+      title: Thank you for your interest
+      registration_closed: "ContentBird est en beta.<br />Pour recevoir un accès et vous tenir informé saisissez votre adresse email ci-dessous"
+      email: Your email
+      participate: I want to participate

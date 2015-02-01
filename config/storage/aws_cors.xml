@@ -1,0 +1,25 @@
+<CORSConfiguration>
+  <CORSRule>
+    <AllowedOrigin>http://localhost:3000</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <AllowedMethod>DELETE</AllowedMethod>
+    <MaxAgeSeconds>1800</MaxAgeSeconds>
+    <AllowedHeader>origin</AllowedHeader>
+    <AllowedHeader>content-type</AllowedHeader>
+    <AllowedHeader>accept</AllowedHeader>
+  </CORSRule>
+
+  <CORSRule>
+    <AllowedOrigin>http://contentbird.herokuapp.com</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>HEAD</AllowedMethod>
+    <AllowedMethod>DELETE</AllowedMethod>
+    <MaxAgeSeconds>1800</MaxAgeSeconds>
+    <AllowedHeader>origin</AllowedHeader>
+    <AllowedHeader>content-type</AllowedHeader>
+    <AllowedHeader>accept</AllowedHeader>
+  </CORSRule>
+</CORSConfiguration>

@@ -1,0 +1,6 @@
+<div class="sortable" id="sectionsZone">
+    <%= f.fields_for :sections do |builder| %>
+        <%= render 'section_fields', f: builder %>
+    <% end %>
+</div>
+<%= link_to_add_fields t('.add_section'), f, :sections, add_zone: 'sectionsZone' %>

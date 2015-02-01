@@ -1,0 +1,10 @@
+<div class="_imageWidget image-widget _field_<%=field.id%> _add-<%=field.title%>">
+    <%= f.label field.id, field.translated_title(content_type).capitalize %>
+    <div class="_imageContainer image-container">
+	    <%= f.hidden_field field.id, class: "_imageValue _field_#{field.id}", data: {base_media_url: media_url(:image), display_thumbnail: true} %>
+	    <%= link_to '', '#', class: '_delImage image-del', data: {icon: raw("&#xe00f;")} %>
+    </div>
+    <div class="_addImageZone image-add">
+    	<%= link_to '', new_upload_path(field: field.id, media_type: 'image', sub_folder: content_id), class: '_addImage butn-no-text action', data: {icon: raw("&#xe001;")} %>
+    </div>
+</div>

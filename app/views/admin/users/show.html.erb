@@ -1,0 +1,95 @@
+<% admin_title 'Users', "Details for #{@user.nest_name}" %>
+
+<div class="row">
+    <div class="cell ratio1">
+        <% if @last_content_time.present? %>
+            <strong>Last content created </strong> <%= time_ago_in_words @last_content_time %> ago
+        <% else %>
+            <strong>No content created yet</strong>
+        <% end %>
+    </div>
+    <div class="cell ratio1">
+        <% if @last_publication_time.present? %>
+            <strong>Last publication</strong> <%= time_ago_in_words @last_publication_time %> ago
+        <% else %>
+            <strong>No publication yet</strong>
+        <% end %>
+    </div>
+</div>
+<br /><br />
+<div class="row">
+    <div class="cell ratio1">
+        <div class="grid">
+            <div class="row">
+                <div class="cell ratio1">
+                    <strong>Channels used: </strong>
+                </div>
+            </div>
+            <% @channels.each do |channel| %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <%= channel.pretty_type %>
+                    </div>
+                    <div class="cell ratio1">
+                        <%= channel.name %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="cell ratio1">
+        <div class="grid">
+            <div class="row">
+                <div class="cell ratio1">
+                    <strong>Content type</strong>
+                </div>
+                <div class="cell ratio1">
+                    <strong>Nb contents</strong>
+                </div>
+                <div class="cell ratio1">
+                    <strong>Nb Publications</strong>
+                </div>
+            </div>
+
+            <% @types_summary.each do |summary| %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <%= summary['content_type_name'] %>
+                    </div>
+                    <div class="cell ratio1">
+                        <%= summary['contents_count'] %>
+                    </div>
+                    <div class="cell ratio1">
+                        <%= summary['publications_count'] %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<br /><br />
+<h2>User data</h2>
+<div class="row">
+    <div class="cell ratio1">
+        <div class="grid">
+            <% @left_attributes.each do |attribute| %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <strong><%= attribute[0] %> : </strong> <%= attribute[1] %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class="cell ratio1">
+        <div class="grid">
+            <% @right_attributes.each do |attribute| %>
+                <div class="row">
+                    <div class="cell ratio1">
+                        <strong><%= attribute[0] %> : </strong> <%= attribute[1] %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

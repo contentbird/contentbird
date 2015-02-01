@@ -1,0 +1,17 @@
+test:
+  channels:
+    index:
+      title: My channels
+      kind_to_create: You wish to create a...
+    new:
+      title: New website channel
+    edit:
+      title: Edit website channel
+    show:
+      title: 'Website channel %{channel}'
+      url_label: 'Url :'
+    last_publication:
+      last_one: 'Last publication'
+      none_yet: "You have not published any content on this channel yet."
+    publications:
+      intro: "Here are your latest publications on this channel. You can un-publish them any time in one click."

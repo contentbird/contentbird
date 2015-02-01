@@ -1,0 +1,13 @@
+fr:
+  activerecord:
+    models:
+      cb/core/user: 'Utilisateur'
+    attributes:
+      cb/core/user:
+        nest_name: Nom d'utilisateur
+        email: Email
+        encrypted_password: Mot de passe
+        created_at: créé le
+        updated_at: mis à jour le
+        platform_user: Utilisateur Contentbird
+        locale: Langue de préférence

@@ -1,0 +1,8 @@
+<p><%= t 'user_mailer.greetings' %></p>
+
+<p><%= t '.invited' %></p>
+
+<p>
+    <%= t '.follow' %>
+    <%= link_to t('user_mailer.subscribe'), new_user_registration_url(token: @token) %>
+</p>

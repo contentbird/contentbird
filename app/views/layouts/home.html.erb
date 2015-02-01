@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title><%= t('.title') %></title>
+        <meta property="og:title" content="<%= t '.meta.og_title' %>" />
+        <meta property="og:description" content="<%= t '.meta.og_description' %>" />
+        <meta property="description" content="<%= t '.meta.description' %>" />
+        <meta property="keywords" content="<%= t '.meta.keywords' %>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%= favicon_link_tag image_path(FAVICON_PATH) %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+        <script type="text/javascript" src="//use.typekit.net/lvc6dih.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <%= yield :head %>
+    </head>
+    <body>
+        <div id="page">
+            <div id="main" role="main">
+                <header>
+
+                    <div class="header-top fixed" id='headerTop'>
+                        <div class="header-logo">
+                            <h2><a href="/"><%= raw t('cb.beta') %></a></h2>
+                        </div>
+                        <div class="header-signIn">
+                            <% if user_signed_in? %>
+                                <span class="nomob">
+                                    <%= t '.welcome_back', name: current_user.nest_name %>&nbsp;
+                                </span>
+                                <%= link_to t('.to_dashboard'), dashboard_path, class: 'butn action' %>
+                            <% else %>
+                                <%= link_to t('.sign_in'), new_user_session_path, class: 'butn action' %>
+                                <%= link_to t('.sign_up'), new_user_registration_path, class: 'butn action signUp nomob', id: 'signupBtn' %>
+                            <% end %>
+                        </div>
+                    </div>
+                </header>
+                <%= yield %>
+                <footer>
+                    <h3 class="cTxt">ContentBird</h3>
+                    <ul class="footer-credit">
+                        <li><%= raw t('cb.copyright', year: Time.now.year) %></li>
+                        <li>
+                            <%= mail_to 'contact@contentbird.com', t('.contact') %>
+                        </li>
+                        <li><%= link_to t('.about'),   '/about'   %></li>
+                        <li><%= link_to t('.privacy'), '/privacy' %></li>
+                        <li><%= link_to t('.terms'),   '/terms'   %></li>
+                    </ul>
+                </footer>
+                <a name="bottom">&nbsp;</a>
+            </div>
+        </div>
+        <script>
+            cb.decorateForms();
+            <%= yield :load_script %>
+        </script>
+        <%= render "cb-render/tracking/piwik" %>
+    </body>
+</html>

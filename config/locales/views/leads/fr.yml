@@ -1,0 +1,7 @@
+fr:
+  leads:
+    new:
+      title: "On y est presque !"
+      registration_closed: "Actuellement, ContentBird est en beta fermée.<br /><br />Pour recevoir un accès et vous tenir informé saisissez votre adresse email ci-dessous"
+      email: Votre email
+      participate: Je veux participer à la béta

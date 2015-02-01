@@ -1,0 +1,143 @@
+@import "cb-render/globals/all.css.scss";
+
+.social-img {
+	@include bp(medium) {
+		width: 120px;
+	}
+	width: 80px;
+	margin-bottom: $padding;
+}
+
+.shared .owner {
+	color: $orange;
+}
+
+.features .cell {
+	& li {
+		color: $gray;
+		margin-bottom: $padding;
+	}
+
+}
+
+.features .row {
+	border-bottom: 1px solid $lightGray;
+}
+
+.narrow {
+	@include bp(large){
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+	@include bp(medium){
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+	padding-left: 0%;
+	padding-right: 0%;
+	& .cell {
+		margin: 0;
+	}
+}
+
+.features.narrow {
+	@include bp(large){
+		padding: 0 8%;
+	}
+}
+
+h1.narrow {
+	padding: 0 5%;
+}
+
+p {
+	color: $txtColor;
+}
+
+.notice {
+	margin-bottom: 0;
+}
+
+.highlight {
+	color: $white;
+	background: $green;
+	width: 100%;
+	padding: $padding*4;
+}
+
+.sep {
+	border: 1px solid $lightGray;
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: $padding;
+}
+
+nav {
+	color: $white;
+}
+
+.logo-cb,
+.touchLogo {
+	text-align: center;
+	height: 44px;
+	line-height: 42px;
+	vertical-align: middle;
+	border: 2px solid $orange;
+}
+
+@-webkit-keyframes logoBlink {
+  from { background-color: $orange; box-shadow: 0 0 9px #333;}
+  50% { background-color: $orange; box-shadow: 0 0 18px $orange;}
+  to { background-color: $orange; box-shadow: 0 0 9px #333;}
+}
+
+@keyframes logoBlink {
+  from { background-color: $orange; box-shadow: 0 0 9px #333;}
+  50% { background-color: $orange; box-shadow: 0 0 18px $orange;}
+  to { background-color: $orange; box-shadow: 0 0 9px #333;}
+}
+
+.logo-cb {
+	margin: 1.375rem;
+	&.blink {
+		@include animation(logoBlink, 2s, infinite)
+	}
+}
+
+.touchLogo {
+	width: 44px;
+	display: inline-block;
+}
+
+a.logo-cb {
+	padding: 0;
+}
+
+a.touchLogo {
+	color: $white;
+}
+
+.dashboard h2 {
+	color: $green;
+}
+
+.feedback {
+	background-color: $orange;
+	margin-top: $padding*10;
+}
+
+.nomob {
+    display: none;
+    @include bp(medium) {
+    	display: inherit;
+    }
+}
+
+.subscriptions-list .contact {
+	background-color: $white;
+	@include roundedBorders;
+	padding: $padding/4;
+	& .butn-no-text {
+		margin-bottom: 0;
+	}
+}

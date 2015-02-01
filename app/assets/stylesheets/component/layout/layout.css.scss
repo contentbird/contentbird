@@ -1,0 +1,225 @@
+/* header */
+.mainNav + .accountNav + .main .touchLinks {
+	@include bp(large) {
+		display: none;
+	}
+}
+
+.mainNav + .accountNav + .main .main-header .flash {
+	@include bp(large) {
+		display: block;
+	}
+}
+
+.main-header {
+	margin: -22px -22px 22px -22px;
+}
+
+/* header navigation */
+.touchNavLink,
+.touchAccountLink {
+	cursor: pointer;
+	&:before {
+		color: white;
+		font-size: $mediumSizeText;
+	}
+}
+
+.touchAccountLink {
+	float: right; /* fallback */
+	&:before {
+		background-color: #8a8a8a;
+		-moz-border-radius: 4px 4px;
+		-webkit-border-radius: 4px 4px;
+		-khtml-border-radius: 4px 4px;
+		-o-border-radius: 4px 4px;
+		border-radius: 4px 4px;
+	}
+}
+
+/* header sign in */
+.touchLinks,
+.touchSignIn {
+	display: table; /* fallback flex */
+	width: 100%; /* fallback flex */
+	background: $darkGray;
+	& .butn {
+		margin-bottom: 0;
+		margin-left: auto;
+	}
+}
+
+.touchSignIn {
+	padding: $padding/2;
+}
+
+.touchLinks {
+	padding: $padding/2 $padding $padding/2 $padding;
+}
+
+/* open panels */
+.openLeft .main {
+	@include bp(large) {
+		@include translate3d(210px,0,0);
+	}
+	@include bp(medium) {
+		@include translate3d(40%,0,0);
+	}
+	@include translate3d(85%,0,0);
+	@include transition(all, .2s, linear);
+}
+
+.openRight .main {
+	@include bp(medium) {
+		@include translate3d(-40%,0,0);
+	}
+	@include translate3d(-85%,0,0);
+	@include transition(all, .2s, linear);
+}
+
+/* open panels hide */
+.openLeft .accountNav,
+.openRight .mainNav	{
+	@include bp(large){
+		display: block;
+	}
+	display: none;
+}
+
+.accountNav {
+	&.openLeft {
+		@include bp(large){
+			left: 200px;
+		}
+	}
+	@include bp(large){
+		left: 88px;
+	}
+
+}
+
+.openLeft .accountNav {
+	&.openLeft {
+		@include bp(large){
+			left: 220px;
+		}
+	}
+}
+
+.widthMenu + .accountNav.openLeft {
+	@include bp(large){
+		left: 88px;
+	}
+}
+
+/* collapse menu */
+.collapseMenu {
+	@include bp(large) {
+		display: block;
+	}
+	display: none;
+}
+
+/* main navigation */
+.mainNav {
+	@include bp(medium) {
+		width: 40%;
+	}
+	@include bp(large) {
+		width: 22%;
+		max-width: 220px;
+		position: relative;
+		background: $darkGray;
+		& a {
+			color: $white;
+		}
+	}
+	width: 85%;
+	position: absolute;
+	z-index: 2;
+	&.widthMenu {
+		@include bp(large) {
+			width: 88px;
+			max-width: 88px;
+			min-width: 88px;
+		}
+	}
+	overflow: auto;
+}
+
+/* right navigation */
+.accountNav {
+	@include bp(medium) {
+		width: 40%;
+		right: 0;
+		padding-left: $padding;
+	}
+	color: $white;
+	position: absolute;
+	right: $padding;
+    z-index: 1;
+}
+
+/* account link & logo */
+.accountLink,
+.logo-cb {
+	@include bp(large) {
+		display: block;
+	}
+	display: none;
+	&.blink {
+		background-color: $orange;
+	}
+}
+
+/* touch link */
+.touchLinks {
+	text-align: center;
+	& .touchNavLink {
+		float: left;
+	}
+}
+
+/* main */
+.main {
+    z-index: 2;
+	padding: $padding;
+    width: 100%;
+    background: $lightGray;
+    position: relative;
+    overflow: auto;
+}
+
+.mainNav.widthMenu + .accountNav + .main {
+	@include bp(large) {
+		width: 100%;
+	}
+}
+
+.openLeft .accountNav.openLeft + .main {
+	-webkit-transform: translate3d(24%, 0, 0);
+	-moz-transform: translate3d(24%, 0, 0);
+	-o-transform: translate3d(24%, 0, 0);
+	transform: translate3d(24%, 0, 0);
+}
+
+.accountNav.openLeft + .main,
+.openLeft .mainNav.widthMenu + .accountNav.openLeft + .main {
+	-webkit-transform: translate3d(22%, 0, 0);
+	-moz-transform: translate3d(22%, 0, 0);
+	-o-transform: translate3d(22%, 0, 0);
+	transform: translate3d(22%, 0, 0);
+}
+
+.mainMenuItem.collapseMenu {
+	display: none;
+}
+
+.mainMenuItem {
+	display: inline-block;
+	margin-left: $padding/2;
+}
+
+.iconMenu .logo-txt {
+	display: none;
+}

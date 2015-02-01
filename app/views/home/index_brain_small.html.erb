@@ -1,0 +1,97 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+<% end %>
+<div class="header-img3">
+    <div class="header-content">
+    </div>
+</div>
+<div class="box">
+    <div class="box-hd">
+        <h1>
+            Vous n'avez jamais été aussi libre<br />de contrôler vos données.
+        </h1>
+    </div>
+    <div class="box-bd cTxt">
+        <% unless user_signed_in? %>
+            <%= link_to 'Renouez avec la vie privée', new_user_registration_path, class: 'butn action push signUp' %>
+        <% end %>
+    </div>
+</div>
+<section class="narrow">
+    <header>
+        <h2 class="cTxt">Comment tout cela fonctionne</h2>
+    </header>
+    <h3>Vos canaux</h3>
+    <p>
+        La première chose à faire et de définir et paramètrer vos canaux sociaux (Facebook, Twitter et Linkedin) afin de partager vos contenus.<br>
+        Vous pouvez les activer ou les desactiver et visualiser l'historique des publications.
+    </p>
+    <h3>Vos contenus</h3>
+    <p>
+        Ensuite, vous pouvez créez des contenus à partir des formats existants : posts, albums photos, liens, contacts. Vous pouvez les retrouver facilement, les modifier.<br>
+        Soyez libre de les publier et les dépublier sur vos différents canaux de diffusion. <br>
+        ContentBird publie un titre et un lien sur le média social et lorsque vous dépubliez un contenu, il cesse immédiatement d'être disponible. 
+    </p>
+</section>
+<section>
+    <div class="highlight narrow" style="padding: 3rem ">
+        <h1 class="cTxt ">
+            Libérez vos données des services qui les utilisent. 
+        </h1>
+        <% unless user_signed_in? %>
+            <div class="cTxt">
+                <%= link_to ('Essayez ContentBird'), new_user_registration_path, class: 'butn action background' %>
+            </div>
+        <% end %>
+    </div>
+</section>
+<section class="features narrow">
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe617;"></div>
+                    <h2 class="cTxt">Arrêter d'être le produit.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    <p>
+                        Réappropriez-vous vos données.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe00f;"></div>
+                    <h2 class="cTxt">Effacer vos données.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Accéder, modifier, effacer les données qui vous concernent. 
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe012;"></div>
+                    <h2 class="cTxt">Garder votre identité.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Maîtrisez vos contenus sous votre vrai nom.
+                </div>
+            </div>
+        </div>
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-hd">
+                    <div data-icon="&#xe010;"></div>
+                    <h2 class="cTxt">Utiliser vos réseaux.</h2>
+                </div>
+                <div class="box-bd cTxt">
+                    Partagez sur les réseaux sociaux existants et futurs.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

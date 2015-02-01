@@ -1,0 +1,35 @@
+<% content_for :load_script do %>
+    cb.decorateImageWidgets();
+    cb.decorateImageGalWidgets();
+    cb.decorateMarkdownWidgets('<%=asset_path('plugins/epiceditor/epiceditor_preview.css')%>');
+<% end %>
+
+<%= form_for @content, as: :content, url: content_path(@content.id) do |f| %>
+
+    <%= render "shared/error_messages", target: @content %>
+
+    <%= f.hidden_field :content_type_id %>
+    <div>
+        <% title_label = @content.content_type.title_label %>
+        <%= f.text_field :title, autofocus: true, required: true, placeholder: (title_label.present? ? title_label : t('.add_title')) , class: 'formTitle', id: 'content_title'  %>
+        <% unless @newly_created %>
+            <%= f.label :slug %>
+        	<%= f.text_field :slug, disabled: true %>
+        <% end %>
+    </div>
+    <%= f.fields_for :properties, OpenStruct.new(@content.properties) do |builder| %>
+        <% @content.content_type.properties.each do |field| %>
+            <%= render "contents/fields/#{field.content_type.name}", field: field, f: builder, content_id: @content.id, content_type: @content.content_type %>
+        <% end %>
+    <% end %>
+
+    <% if @newly_created %>
+        <%= f.submit t('.submit_create') %>
+        <%= link_to t('actions.cancel'), content_path(@content.id, no_flash: true), method: :delete, class: 'butn' %>
+    <% else %>
+        <%= f.submit %>
+        <%= link_to t('actions.cancel'), contents_path(@type.id), class: 'butn' %>
+        <%= link_to t('actions.delete'), content_path(@content.id), method: :delete, class: 'butn delete', data: {confirm: t('contents.shared.confirm') } %>
+    <% end %>
+
+<% end %>

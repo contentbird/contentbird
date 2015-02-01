@@ -1,0 +1,15 @@
+<% if publications.any? %>
+    <div id="publications_error_<%=@content_id%>" class="error" style="display:none;"></div>
+    <div id="publications_info_<%=@content_id%>" class="info" style="display:none;"></div>
+    <div class="row">
+        <% publications.each do |channel, publication| %>
+            <div class="cell" id="publish_widget_<%=content_id%>_<%=channel.id%>">
+                <%= publish_button channel, publication, content_id %>
+            </div>
+        <% end %>
+    </div>
+<% else %>
+    <div class="info">
+        <%= raw t('.no_channel', url: (advanced_mode? ? channels_path : new_social_channel_path)) %>
+    </div>
+<% end %>

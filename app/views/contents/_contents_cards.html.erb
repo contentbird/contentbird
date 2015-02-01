@@ -1,0 +1,35 @@
+<% @contents.each do |content| %>
+    <% type = @type || content.content_type %>
+    <article class="box content" id="content_<%=content.id%>">
+        <header class="box-hd">
+            <%= link_to type.translated_title, contents_path(content_type_id: type.id) %>
+            <%= link_to '', content_path(content.id), method: :delete, data: {icon: raw("&#xe00b;"), confirm: t('contents.shared.confirm')}, class: "remove rFloat" %>
+            <%= link_to '', edit_content_path(content.id), id: "content_edit_#{content.id}", class: 'rFloat', data: {icon: raw("&#xe00c;"), no_turbolink: true}%>
+        </header>
+        <%= link_to content_path(content.id), class: 'linkZone' do %>
+            <div class="box-bd">
+                <% if content.first_image_property_url.present? %>
+                    <%= display_image(content.first_image_property_key, content.first_image_property_url, nil, wrapper_class: "box--md") %>
+                <% end %>
+                <h2><%= content.title %></h2>
+                <div class="box--ct">
+                    <p>
+                        <time datetime="<%=l(content.updated_at, format: :html5)%>">
+                            <%= time_ago_in_words content.updated_at %>
+                        </time>
+                    </p>
+                    <% if content.first_textual_property_key.present? %>
+                        <%= display_content_property(content.first_textual_property_key, content.first_textual_property, display_label: false) %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+        <footer class="box-ft">
+            <%= link_to publications_path(content_id: content.id), remote: true, id: "show_pub_#{content.id}", data: {icon: raw("&#xe010;")} do %>
+                <span id="pub_count_<%=content.id%>"><%= content.publications_count %></span> <%=t('.publications')%>
+            <% end %>
+            <%= link_to t('contents.shared.hide_publications'), '#', id: "hide_pub_#{content.id}", class: 'hide_pub', style: 'display: none', data: {content_id: content.id.to_s, icon: raw("&#xe015;")} %>
+            <div id="publications_for_<%=content.id%>" style="display: none"></div>
+        </footer>
+    </article>
+<% end %>

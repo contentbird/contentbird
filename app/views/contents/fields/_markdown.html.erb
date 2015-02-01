@@ -1,0 +1,6 @@
+<div class="_markdownWidget">
+	<%= link_to t('defaults.how_it_works'), markdown_help_path, class: '_openLargeModal', style: 'float: right;' %>
+    <%= f.label field.id, field.translated_title(content_type).capitalize + ' (markdown)' %>
+    <%= f.hidden_field field.id, class: 'mdText' %>
+    <div id="mdEditor_<%=field.id%>" class="mdEditor"></div>
+</div>

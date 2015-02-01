@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title><%= t('.title') %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <%= favicon_link_tag image_path(FAVICON_PATH) %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <%= csrf_meta_tags %>
+        <script type="text/javascript" src="//use.typekit.net/lvc6dih.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <%= yield :head %>
+    </head>
+    <body>
+        <div id="page" class="page">
+            <% if user_signed_in? %>
+                <nav id="mainNav" class="mainNav" role="navigation">
+                    <ul>
+                        <li><%= link_to raw('C<span class="logo-txt">ontentBird</span>'), dashboard_path, class: "logo-cb#{' blink' if logo_must_blink?}" %></li>
+                        <li>
+                            <%= link_to raw("<span class=\"mainMenuItem\">#{current_user.nest_name}</span>"), '#', id: 'accountLink', data: {icon: raw("&#xe012;")}, class: "accountLink#{' selected' if @section == 'account'}" %>
+                        </li>
+                        <% if advanced_mode? %>
+                            <li>
+                                <%= link_to raw("<span class=\"mainMenuItem\">#{t('.main_nav.formats')}</span>"), content_types_path, id: 'formatMenuItem', data: {icon: raw("&#xe016;")}, class: ('selected' if @section == 'content_type') %>
+                            </li>
+                        <% end %>
+                        <li>
+                            <%= link_to raw("<span class=\"mainMenuItem\">#{t('.main_nav.contents')}</span>"), contents_path, id: 'contentMenuItem', data: {icon: raw("&#xe014;")}, class: ('selected' if @section == 'content') %>
+                        </li>
+                        <li>
+                            <%= link_to raw("<span class=\"mainMenuItem\">#{t('.main_nav.channels')}</span>"), channels_path, id: 'channelMenuItem', data: {icon: raw("&#xe010;")}, class: ('selected' if @section == 'channel') %>
+                        </li>
+                        <li class="feedback">
+                            <%= mail_to 'contact@contentbird.com', raw("<span class=\"mainMenuItem\">#{t('.feedback.question')}</span>"), class: 'feedback-txt', data: {icon: raw("&#xe616;")}, title: t('.feedback.alt') %>
+                        </li>
+                    </ul>
+                    <a href="#" id="collapseMenu" class="collapseMenu" data-icon="&#xe017;"></a>
+                </nav>
+                <nav id="accountNav" class="accountNav" role="navigation">
+                    <h2><%= t('.account_nav.my_account') %></h2>
+                    <%= link_to(t('.account_nav.my_profile'), edit_registration_path(current_user)) %>
+                    <%= link_to(t('.account_nav.logout'), destroy_user_session_path) %>
+                    <div class="copyright">
+                        <%= link_to t('.about'),   '/about'   %>
+                        <%= link_to t('.privacy'), '/privacy' %>
+                        <%= link_to t('.terms'),   '/terms'   %>
+                        <%= link_to t('.website'), root_path  %>
+                        <%= raw t('cb.copyright', year: Time.now.year) %>
+                    </div>
+                </nav>
+            <% end %>
+            <div id="main" class="main" role="main">
+                <header class="main-header">
+                    <% if user_signed_in? %>
+                        <div class="touchLinks">
+                            <span id="touchNavLink" class="touchNavLink" data-icon="&#xe009;"></span>
+                             <%= link_to 'C', dashboard_path, class: 'touchLogo' %>
+                             <span id="touchAccountLink" class="touchAccountLink" data-icon="&#xe012;"></span>
+                         </div>
+                    <% else %>
+                        <div class="touchSignIn">
+                            <%= link_to('Log in', new_user_session_path, class: 'butn action') %>
+                        </div>
+                    <% end %>
+                    <div id="flash" class="flash">
+                    <% if notice.present? %><div class="notice"><%= notice %></div><% end %>
+                    <% if alert.present? %><div class="alert"><%= alert %></div><% end %>
+                    <% if session[:become_user] %><div class="alert">WARNING : you are in support mode, watch it!</div><% end %>
+                    </div>
+                </header>
+                <%= yield %>
+                <a name="bottom">&nbsp;</a>
+            </div>
+        </div>
+        <div id="modal" style="display: none" class="modal"></div>
+        <div class="modal-overlay"></div>
+        <script>
+            cb.animateLayout();
+            cb.decorateForms();
+            cb.decorateModal();
+            <%= yield :load_script %>
+        </script>
+        <%= render("cb-render/tracking/piwik") unless request.ssl? %>
+    </body>
+</html>

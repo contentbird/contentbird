@@ -1,0 +1,18 @@
+fr:
+  user_mailer:
+    greetings: 'Bonjour'
+    subscribe: 'Créer votre compte'
+    invite_lead:
+      subject: 'Votre invitation à rejoindre la Beta de ContentBird'
+      invited: 'Vous êtes invité à la Beta de contenbird.'
+      follow: 'Suivez le lien ci-dessous pour vous inscrire:'
+    invitation:
+      subject: '%{name} vous invite à rejoindre ContentBird'
+      invitation: '%{name} vous invite à rejoindre la beta de ContentBird.<br /> Vous découvrirez un nouveau moyen de gérer et partager vos données sur le web sans en perdre le contrôle'
+      discover: 'Découvrez ContentBird'
+    email_publication:
+      share: "partage avec vous ce contenu sur"
+      who_we_are: "ContentBird est un service de partage sur le web qui protège la vie privée de ses utilisateurs :"
+      discover: 'Découvrir'
+      unsubscribe: "Pour ne plus recevoir les partages de cette liste de diffusion,"
+      click_here: "cliquez ici"

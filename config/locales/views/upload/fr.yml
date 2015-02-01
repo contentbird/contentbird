@@ -1,0 +1,18 @@
+fr:
+  upload:
+    new:
+      title: Uploader une image
+      errors:
+        type: "Vous ne pouvez transférer que des fichiers images aux formats suivants: %{types}"
+        upload: "Désolé, votre fichier n'a pas pu être téléchargé"
+        post_upload: "Désolé, votre fichier %{file} n'a pas pu être téléchargé"
+        max_upload_number: "Doucement, pas plus de %{count} fichiers à la fois"
+      limits: "jpg, png ou gif, pas plus de %{size} Mo"
+      in_progress: "Téléchargement en cours..."
+      success: "Le fichier a été téléchargé avec succès"
+      done_link: "retour"
+      select: Sélectionnez
+  multi_uploads:
+    new:
+      title: Uploader vos images
+      drop: Déposer vos fichiers ici<br />ou<br />

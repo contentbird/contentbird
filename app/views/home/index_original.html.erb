@@ -1,0 +1,153 @@
+<% content_for :load_script do %>
+    cb.decorateHomeImage();
+<% end %>
+<div class="header-img" id="homeImage">
+    <div class="header-content">
+        <div class="box transparent">
+            <div class="box-hd">
+                <h1>
+                    Vous pouvez enfin partager <br /> les données qui comptent.
+                </h1>
+            </div>
+            <div class="box-bd cTxt">
+                <% unless user_signed_in? %>
+                    <%= link_to 'Reprennez le contrôle de vos données', new_user_registration_path, class: 'butn action push signUp' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="narrow">
+    <h1 class="cTxt">Jusqu’ici vous aviez le choix entre…</h1>
+    <div class="row">
+        <div class="cell ratio1 cTxt">
+            <p>
+                Eparpiller vos données sur une multitude de média sociaux, qui les gardent et les utilisent à des fins publicitaires
+            <p>
+            ou
+            <p>
+                Ne pas utiliser les moyens de communication modernes et vous priver d’une connexion avec vos amis, familles, contacts professionnels
+            </p>
+            <p>
+                <strong>Nous ne voulions pas choisir, alors nous avons créé ContentBird.</strong>
+            </p>
+            <p>
+                En 2 mots : Lorsque vous partagez un contenu avec ContentBird, vous ne donnez pas vos données aux médias que vous ciblez, vous leur prêtez un lien vers ce contenu, qui reste votre entière propriété.
+                <br /><br />
+                Mais en fait, il y a bien plus...
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="cell ratio1">
+            <div class="box">
+                <div class="box-bd cTxt">
+                    <%= image_tag ("home/cb-software.jpg") %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sep"></div>
+    <h1 class="cTxt">
+        Alors en quoi ça révolutionne l’utilisation que vous faites de vos données ?
+    </h1>
+    <div class="row">
+        <div class="cell ratio1 cTxt">
+            <p>
+                Vous pouvez retirer vos données à tout moment : vous avez enfin le droit à l’oubli.
+            </p>
+            <p>
+                Vos données sont toujours à jour sur internet
+            </p>
+            <p>
+                Un nouveau média social, un nouveau blog, un service ?
+                <br />
+                Vous pouvez peur donner accès à vos données existantes, sans les dupliquer.
+            </p>
+            <p>
+                Réutilisez vos données sur vos projets (sites web, échanges de données, DIY, robotique…) en utilisant l’API ContentBird
+            </p>
+            <p>
+                Partagez des données structurées avec le monde sur ContentBird.me : participez à l’openData
+            </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="highlight narrow">
+        <h1 class="cTxt ">
+            "Libérez vos données des services qui les utilisent."
+        </h1>
+        <div class="cTxt">
+            <%= link_to ('Essayez ContentBird'), new_user_registration_path, class: 'butn action background' %>
+        </div>
+    </div>
+</section>
+<section class="features narrow">
+        <h1 class="cTxt">Votre base de donnée</h1>
+        <div class="row">
+            <div class="cell ratio1">
+                <div class="box">
+                    <div class="box-hd">
+                        <div data-icon="&#xe613;"></div>
+                        <h2 class="cTxt">Simple</h2>
+                    </div>
+                    <div class="box-bd">
+                        <ul>
+                            <li>Design épuré, optimisé pour la productivité</li>
+                            <li>Rangé, structuré</li>
+                            <li>Accès depuis n'importe ou, compatible ordinateurs, tablettes, smartphones</li>
+                            <li>préconfiguré avec des formats de donnés prêt à l'emploi, à utiliser ou à customiser. Vous pouvez aussi créer les vôtres.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cell ratio1">
+                <div class="box">
+                    <div class="box-hd ">
+                        <div data-icon="&#xe010;"></div>
+                        <h2 class="cTxt">Connectée</h2>
+                    </div>
+                    <div class="box-bd">
+                        <ul>
+                            <li>Publier sur twitter, facebook, linkedin et plus bientôt</li>
+                            <li>tu peux faire autant de sites que tu veux</li>
+                            <li>Vos données accessibles depuis n'importe quelle application avec l'API</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="cell ratio1">
+                <div class="box">
+                    <div class="box-hd">
+                        <div data-icon="&#xe612;"></div>
+                        <h2 class="cTxt">Respectueux de la vie privée</h2>
+                    </div>
+                    <div class="box-bd">
+                        <ul>
+                            <li>Vous publiez que des liens, vos photos, textes, etc.. restent à vous</li>
+                            <li>Vous pouvez à tout moment retirer vos contenus en un clic</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cell ratio1">
+                <div class="box">
+                    <div class="box-hd">
+                        <div data-icon="&#xe614;"></div>
+                        <h2 class="cTxt">Digne de confiance</h2>
+                    </div>
+                    <div class="box-bd">
+                        <ul>
+                            <li>Pas d'exploitaion de vos données</li>
+                            <li>Quand vous supprimez, c'est définitif</li>
+                            <li>Pas de publicité</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

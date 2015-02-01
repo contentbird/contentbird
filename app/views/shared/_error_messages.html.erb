@@ -1,0 +1,12 @@
+<% if target.errors.any? %>
+    <div id="errorExplanation" class="error">
+        <h2>
+            <%= target.errors.count > 1 ? t('errors.template.header.other', count: target.errors.count, model: target.class.model_name.human) : t('errors.template.header.one', model: target.class.model_name.human) %>
+        </h2>
+        <ul>
+            <% target.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

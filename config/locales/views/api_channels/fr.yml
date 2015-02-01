@@ -1,0 +1,12 @@
+fr:
+  api_channels:
+    form:
+      generate_token: Regénérer clé API
+      confirm: "Si quelqu'un utilise cette clé pour requéter votre contenu, il n'y aura plus accès. Etes-vous sûr?"
+    edit:
+      title: Editer le canal API
+    new:
+      title: Nouveau canal API
+    show:
+      title: "Canal API %{channel}"
+      try_api: "Essayer l'API de ce canal"

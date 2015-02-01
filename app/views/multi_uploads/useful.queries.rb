@@ -1,0 +1,2 @@
+# Nb publications channel email sur la derniere semaine, en excluant les admin et sneusch
+CB::Core::Publication.unscoped.joins(:channel => :owner).where('channels.type = ?', 'CB::Core::MessagingChannel').where('publications.published_at > ?', 1.week.ago).where('users.admin = ?', false).where('users.email <> ?', 'sneusch@mac.com')

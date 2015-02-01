@@ -1,0 +1,10 @@
+<div class="_imageWidget image-widget _field_cover">
+    <%= f.label :cover %>
+    <div class="_imageContainer image-container">
+        <%= f.hidden_field :cover, class: "_imageValue _field_cover", data: {base_media_url: channel_media_url(:cover), display_thumbnail: false} %>
+        <%= link_to '', '#', class: '_delImage image-del', data: {icon: raw("&#xe00f;")} %>
+    </div>
+    <div class="_addImageZone image-add">
+        <%= link_to '', new_upload_path(field: 'cover', media_type: 'cover'), class: '_addImage butn-no-text action', data: {icon: raw("&#xe001;")} %>
+    </div>
+</div>

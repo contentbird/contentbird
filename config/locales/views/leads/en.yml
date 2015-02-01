@@ -1,0 +1,7 @@
+en:
+  leads:
+    new:
+      title: "Almost there !"
+      registration_closed: "ContentBird is in closed beta at the moment.<br />Fill in your email to request an early access and stay in touch."
+      email: Your email
+      participate: I want to participate

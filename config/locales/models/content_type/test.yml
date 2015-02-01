@@ -1,0 +1,45 @@
+test:
+  activerecord:
+    models:
+      cb/core/content_type: 'content_type'
+    attributes:
+      cb/core/content_type:
+        name: name
+        created_at: created_at
+        updated_at: updated_at
+        composite: composite
+        owner_id: owner_id
+        origin_type_id: origin_type_id
+        title: title
+        contents_count: contents_count
+        title_label: title_label
+        usable_by_default: usable_by_default
+        by_platform: by_platform
+  content_type_name:
+    text: text
+    memo: memo
+    email: email
+    url: url
+    markdown: markdown
+    image: image
+    image_gallery: image_gallery
+    phone: phone
+    contact: Contact
+    link: Link
+    post: Post
+    photo-album: Photo album
+  content_type_properties_name:
+    post:
+      image: Image
+      header: Header
+      body: Body
+    photo-album:
+      forewords: Comment
+      photos: Photos
+    contact:
+      email: Email
+      telephone: Phone
+      comment: Comment
+    link:
+      url: Url
+      comment: Comment

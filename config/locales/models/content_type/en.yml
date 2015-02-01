@@ -1,0 +1,45 @@
+en:
+  activerecord:
+    models:
+      cb/core/content_type: 'Format'
+    attributes:
+      cb/core/content_type:
+        name: Url name
+        created_at: Created at
+        updated_at: Update at
+        composite: Composite
+        owner_id: Owner
+        origin_type_id: Original format
+        title: Name
+        contents_count: Number of contents
+        title_label: Title fields label
+        usable_by_default: Provided by default
+        by_platform: Contentbird format
+  content_type_name:
+    text: Short text
+    memo: Long text
+    email: Email
+    url: Url
+    markdown: Markdown text
+    image: Image
+    image_gallery: Image gallery
+    phone: Phone
+    contact: Contact
+    link: Link
+    post: Post
+    photo-album: Photo album
+  content_type_properties_name:
+    post:
+      image: Image
+      header: Header
+      body: Body
+    photo-album:
+      forewords: Comment
+      photos: Photos
+    contact:
+      email: Email
+      telephone: Phone
+      comment: Comment
+    link:
+      url: Url
+      comment: Comment

@@ -1,0 +1,39 @@
+<% content_for :load_script do %>
+    cb.decorateChannelSubscriptions();
+<% end %>
+
+<label for "new_contact_email"><%= t('.subscribers.label') %></label>
+<div class="box lightGray _subscriptionsForm">
+    <div class="row">
+        <div class="cell ratio1">
+        <%= email_field_tag :new_contact_email, nil, placeholder: t('.subscribers.placeholder'), id: 'new_contact_email' %>
+        </div>
+        <div class="cell"><%= link_to '', contacts_path, class: 'butn-no-text action', id: 'add_contact', data: {icon: raw("&#xe001;")} %></div>
+    </div>
+    <div id="maxListSize" class="row info" style="display: none" ><%= t('.subscribers.max_info')%></div>
+    <div id="subscription_notice" class="row info" style="display: none" ></div>
+    <div id="subscriptions_list" class="row subscriptions-list">
+        <%= f.fields_for :subscriptions do |builder| %>
+            <fieldset id="contact_<%= builder.object.contact_id%>" class="cell _channelSubscription">
+                <div class="contact">
+                    <%= builder.object.contact.email %>
+                    <%= builder.hidden_field :contact_id %>
+                    <%= builder.hidden_field :_destroy, class: '_destroyRecord' %>
+                    <%= link_to '', '#', class: "_removeFields butn-no-text", data: {icon: raw("&#xe00b;")} %>
+                </div>
+            </fieldset>
+        <% end %>
+    </div>
+    <div class="error _subscriptionsError" style="display: none;"></div>
+</div>
+
+<script id="cb-template-channel-subscription" type="text/x-tmpl">
+    <fieldset id="contact_{%=o.id%}" class="cell _channelSubscription">
+        <div class="contact">
+            {%=o.email%}
+            <input id="channel_subscriptions_attributes_{%=o.position%}_contact_id" name="channel[subscriptions_attributes][{%=o.position%}][contact_id]" type="hidden" value="{%=o.id%}">
+            <input class="_destroyRecord" id="channel_subscriptions_attributes_{%=o.position%}__destroy" name="channel[subscriptions_attributes][{%=o.position%}][_destroy]" type="hidden" value="false">
+            <a class="_removeFields butn-no-text" data-icon="&#xe00b;" href="#"></a>
+        </div>
+    </fieldset>
+</script>

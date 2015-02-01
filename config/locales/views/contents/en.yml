@@ -1,0 +1,30 @@
+en:
+  contents:
+    shared:
+      confirm: 'The content and its publications will be permanently destroyed. Are you sure ?'
+      hide_publications: 'Hide publications'
+    content_filter:
+      all_formats: All formats
+      search: Search
+    create_content_button:
+      create: Create one of
+      create_other: Or create one of...
+      tip: 'Tip: to share a video on Youtube, Dailymotion or Vimeo, or a music on Soundcloud, Spotify or Deezer, create a'
+    index:
+      title: 'My contents'
+    contents_cards:
+      publications: 'publications...'
+    form:
+      add_title: Add a title
+      submit_create: 'Create this content'
+    edit:
+      title: Edit contents
+    new:
+      title: New content
+      new_title: "New %{title}"
+    show:
+      title: Your content
+      published_on: 'Published on <span id="pub_count_%{id}">%{count}</span> channels'
+    fields:
+      url:
+        placeholder: 'Paste your link here. We will display players for Youtube, Soundcloud, Dailymotion, Spotify, Vimeo and Deezer'

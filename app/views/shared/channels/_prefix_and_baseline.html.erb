@@ -1,0 +1,15 @@
+<% unless @channel.messaging? || (@channel.social? && @channel.persisted?) %>
+    <div>
+        <%= f.label :url_prefix %>
+        <div class="row">
+            <div class="cell ratio1">
+                <%= f.text_field :url_prefix, required: true %>
+            </div>
+            <div class="cell ratio2"><label>.contentbird.me</label></div>
+        </div>
+    </div>
+<% end %>
+<div>
+    <%= f.label :baseline %>
+    <%= f.text_field :baseline %>
+</div>

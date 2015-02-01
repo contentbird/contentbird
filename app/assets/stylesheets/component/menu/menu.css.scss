@@ -1,0 +1,19 @@
+.logo {
+	position: absolute;
+}
+
+nav a {
+	color: $darkGray;
+	display: block;
+	&.selected {
+		background-color: $lightGray;
+	}
+}
+
+.mainNav a{
+	padding: $padding;
+}
+
+.accountNav a {
+	padding: $padding/4 0 $padding/4 0;
+}

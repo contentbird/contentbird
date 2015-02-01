@@ -1,0 +1,23 @@
+fr:
+  cb:
+    beta: 'ContentBird<span class="nomob"> beta</span>'
+    copyright: "&copy; %{year} ContentBird"
+  time:
+    formats:
+      z: "%d-%m-%YT%H:%M:%SZ"
+      html5: "%Y-%m-%d %H:%M"
+      sql: "%Y-%m-%d %H:%M:%S.%6N"
+  defaults:
+    is_on: 'ON'
+    is_off: 'OFF'
+    sure: 'Etes-vous sûr?'
+    how_it_works: 'Comment ça marche ?'
+    show_options: Voir options
+    hide_options: Cacher options
+  actions:
+    create: 'Créer'
+    cancel: 'Annuler'
+    delete: 'Supprimer'
+  ago: ""
+  or: 'ou'
+  next_hour: "1 heure max"

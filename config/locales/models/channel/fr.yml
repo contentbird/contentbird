@@ -1,0 +1,79 @@
+fr:
+  activerecord:
+    models:
+      cb/core/channel: 'canal'
+      cb/core/website_channel: 'canal web'
+      cb/core/social_channel: 'canal social'
+      cb/core/api_channel: 'canal API'
+      cb/core/messaging_channel: 'canal email'
+    attributes:
+      cb/core/channel:
+        id: Clé d'API
+        name: 'Nom'
+        closed_at: 'Fermé le'
+        url_prefix: "Préfixe d'url"
+        access_token: 'Code secret'
+        type: 'Genre'
+        provider: 'Service'
+        css: 'Feuille de style (css)'
+        baseline: 'Accroche du site'
+        cover: 'Image de fond'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        allow_social_feed: 'Permettre de lister les contenus'
+      cb/core/website_channel:
+        id: Clé d'API
+        name: 'Nom'
+        closed_at: 'Fermé le'
+        url_prefix: "Préfixe d'url"
+        access_token: 'Code secret'
+        type: 'Genre'
+        provider: 'Service'
+        css: 'Feuille de style (css)'
+        baseline: 'Accroche du site'
+        cover: 'Image de fond'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        allow_social_feed: 'Permettre de lister les contenus'
+      cb/core/social_channel:
+        id: Clé d'API
+        name: 'Nom'
+        closed_at: 'Fermé le'
+        url_prefix: "Préfixe d'url"
+        access_token: 'Code secret'
+        type: 'Genre'
+        provider: 'Service'
+        css: 'Feuille de style (css)'
+        baseline: 'Accroche du site'
+        cover: 'Image de fond'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        allow_social_feed: 'Permettre de lister les contenus'
+      cb/core/api_channel:
+        id: Clé d'API
+        name: 'Nom'
+        closed_at: 'Fermé le'
+        url_prefix: "Préfixe d'url"
+        access_token: 'Code secret'
+        type: 'Genre'
+        provider: 'Service'
+        css: 'Feuille de style (css)'
+        baseline: 'Accroche du site'
+        cover: 'Image de fond'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        allow_social_feed: 'Permettre de lister les contenus'
+      cb/core/messaging_channel:
+        id: Clé d'API
+        name: 'Nom'
+        closed_at: 'Fermé le'
+        url_prefix: "Préfixe d'url"
+        access_token: 'Code secret'
+        type: 'Genre'
+        provider: 'Service'
+        css: 'Feuille de style (css)'
+        baseline: 'Accroche du site'
+        cover: 'Image de fond'
+        created_at: 'Créé le'
+        updated_at: 'Mis à jour le'
+        allow_social_feed: 'Permettre de lister les contenus'

@@ -1,0 +1,12 @@
+en:
+  api_channels:
+    form:
+      generate_token: Regenerate token
+      confirm: 'If anyone uses this token to query your content, this will revoke his credential. Are you sure?'
+    edit:
+      title: Edit API channel
+    new:
+      title: New API channel
+    show:
+      title: "API channel %{channel}"
+      try_api: "Try this channel's API"

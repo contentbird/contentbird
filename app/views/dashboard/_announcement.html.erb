@@ -1,0 +1,9 @@
+<% if ANNOUNCEMENT_CODE.present? && !current_user.announcement_clicked?(ANNOUNCEMENT_CODE) %>
+    <% session['announcement_seen'] = ANNOUNCEMENT_CODE unless session['announcement_seen'] == ANNOUNCEMENT_CODE %>
+    <div class="info">
+        <%= link_to announcement_path, target: '_blank' do %>
+            <%= raw t("announcements.#{ANNOUNCEMENT_CODE}") %>
+        <% end %>
+        <%= link_to '', close_announcement_path, data: {icon: raw("&#xe00b;")}, class: 'butn-no-text' %>
+    </div>
+<% end %>

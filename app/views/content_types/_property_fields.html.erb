@@ -1,0 +1,32 @@
+<fieldset class="_sortItem">
+	<div class="row">
+		<div class="cell">
+			<div class="_dragHandle" data-icon="&#xe000;"></div>
+		</div>
+		<div class="cell ratio1">
+			<div class="cell-content">
+	    		<%= f.label :title %>
+	    		<div class="cell-fill">
+		   			<%= f.text_field :title, required: true %>
+		   			<%= f.hidden_field :position, class: "_dragIndex" %>
+		   		</div>
+		    </div>
+	    </div>
+
+	    <div class="cell ratio1">
+	    	<div class="cell-content">
+	    		<%= f.label :content_type_id %>
+    			<div class="cell-fill">
+    				<%= f.collection_select(:content_type_id, @selectable_types, :id, :translated_title) %>
+    	 		</div>
+	   		</div>
+	   	</div>
+
+	    <div class="cell">
+	    	<div class="cell-content">
+	    		<%= f.hidden_field :_destroy, class: '_destroyRecord' %>
+	    		<%= link_to '', '#', class: "_removeFields butn-no-text", id: "ct-del-#{f.options[:child_index]}", data: {icon: raw("&#xe00b;")} %>
+	    	</div>
+	    </div>
+ 	</div>
+</fieldset>

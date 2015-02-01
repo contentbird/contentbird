@@ -1,0 +1,14 @@
+<section class="channels">
+    <h1 class="h2"><%= t '.title', channel: @channel.name %></h1>
+    <div class="box">
+        <div class="box-bd">
+            <%= channel_edit_link @channel, class: 'rFloat' %>
+            <p id="subscriptions_list">
+                <strong><%= t '.subscribers' %></strong><br />
+                <%= @channel.contacts.pluck(:email).join(', ') %>
+            </p>
+            <%= render 'last_publication' %>
+        </div>
+    </div>
+    <%= render 'publications', publications: @publications %>
+</section>

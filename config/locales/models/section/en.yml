@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      cb/core/section: "section"
+    attributes:
+      cb/core/section:
+        slug: "Url name"
+        title: 'Title'
+        content_type_id: 'Format'
+        mode: 'Display mode'
+        created_at: 'Created at'
+        updated_at: 'Updated at'
+        forewords: 'Forewords'
+  section_modes:
+    display: Content list
+    form: Creation form

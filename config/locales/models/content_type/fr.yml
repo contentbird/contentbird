@@ -1,0 +1,45 @@
+fr:
+  activerecord:
+    models:
+      cb/core/content_type: 'Format'
+    attributes:
+      cb/core/content_type:
+        name: Nom d'url
+        created_at: Créé le
+        updated_at: Mis à jour le
+        composite: Composite
+        owner_id: Propriétaire
+        origin_type_id: Format d'origine
+        title: Nom
+        contents_count: Nombre de contenus
+        title_label: Libellé du titre
+        usable_by_default: Fourni par défaut
+        by_platform: Format Contentbird
+  content_type_name:
+    text: Texte court
+    memo: Texte long
+    email: Email
+    url: Url
+    markdown: Texte Markdown
+    image: Image
+    image_gallery: Gallerie d'images
+    phone: Téléphone
+    contact: Contact
+    link: Lien
+    post: Article
+    photo-album: Album photo
+  content_type_properties_name:
+    post:
+      image: Image
+      header: En tête
+      body: Corps de texte
+    photo-album:
+      forewords: Commentaire
+      photos: Photos
+    contact:
+      email: Email
+      telephone: Téléphone
+      comment: Commentaire
+    link:
+      url: Url
+      comment: Commentaire

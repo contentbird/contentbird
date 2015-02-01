@@ -1,0 +1,11 @@
+<% if @last_publication_at.present? %>
+    <p>
+    	<%= t '.last_one' %>
+        <time datetime="<%=l(@last_publication_at, format: :html5)%>">
+            <%= time_ago_in_words @last_publication_at %>
+        </time>
+		<%= t 'ago' %>
+    </p>
+<% else %>
+    <p><%= t '.none_yet' %></p>
+<% end %>

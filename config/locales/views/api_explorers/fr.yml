@@ -1,0 +1,10 @@
+fr:
+  api_explorers:
+    methods:
+      home_contents: Liste des publications de la 1ère rubrique
+      section_contents: Liste des publications d'une rubrique
+      section_content: Détail d'une publication dans une rubrique
+      new_section_content: Nouveau contenu dans une rubrique
+      create_section_content: Création d'un contenu dans une rubrique
+      contents: Liste des contenus toutes rubriques confondues
+      content: Détail d'une publication

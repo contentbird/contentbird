@@ -1,0 +1,72 @@
+.fancy-select {
+    position: relative;
+    border-right: 1px solid $lightGray;
+}
+
+.fancy-select.disabled {
+    opacity: 0.5;
+}
+
+.fancy-select .trigger {
+    cursor: pointer;
+    padding: $padding/2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    background: $white;
+    width: 100%;
+    &:after {
+        content: "";
+        position: absolute;
+        right: $padding;
+        top: $padding;
+        @include arrow(bottom, $darkGray, 10px);
+    }
+}
+
+.fancy-select ul.options {
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    visibility: hidden;
+    z-index: 50;
+    overflow: auto;
+    background: $darkGray;
+    color: $white;
+    min-width: 100%;
+}
+
+.fancy-select ul.options.open {
+    visibility: visible;
+    top: 52px;
+    opacity: 1;
+}
+
+.fancy-select ul.options.overflowing {
+    top: auto;
+    bottom: 40px;
+}
+
+.fancy-select ul.options.overflowing.open {
+    top: auto;
+    bottom: 50px;
+}
+
+.fancy-select ul.options li {
+    padding: $padding/2;
+    color: $white;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.fancy-select ul.options li.selected {
+    background: $white;
+    color: $darkGray;
+}
+
+.fancy-select ul.options li.hover {
+    color: #fff;
+}

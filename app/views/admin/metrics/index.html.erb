@@ -1,0 +1,11 @@
+<% admin_title 'Metrics', 'Cumulated' %>
+<p><strong>Number of users :</strong> <%= @user_count %></p>
+<p><strong>Number of contents by type :</strong><br />
+    <% @contents_count.each do |type, count| %>
+         - <%= type %> : <%= count %><br />
+    <% end %>
+</p>
+<p><strong>Number of publication by status :</strong><br />
+     - Active : <%= @publications_count %> (include the expiring ones)<br/ >
+     - Deleted : <%= @deleted_publications_count %><br/ >
+     - Set to expire : <%= @expiring_publications_count %><br/ >

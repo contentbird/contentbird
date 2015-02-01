@@ -1,0 +1,17 @@
+fr:
+  channels:
+    index:
+      title: Mes canaux de diffusion
+      kind_to_create: Vous souhaitez créer un ...
+    new:
+      title: Nouveau canal web
+    edit:
+      title: Editer canal web
+    show:
+      title: 'Canal web %{channel}'
+      url_label: 'Url :'
+    last_publication:
+      last_one: 'Dernière publication il y a'
+      none_yet: "Vous n'avez encore rien publié sur ce canal."
+    publications:
+      intro: "Voici les derniers contenus que vous avez publiés sur ce canal. Vous pouvez les dépublier à tout moment en un clic."
